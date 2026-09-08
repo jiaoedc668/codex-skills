@@ -1,0 +1,355 @@
+{
+  "schema_version": 4,
+  "candidate": {
+    "batch_id": "batch-craft-v4",
+    "candidate_id": "batch-craft-v4-c1",
+    "position": 1,
+    "selection_status": "awaiting_selection",
+    "difference_axes": {
+      "inciting_incident": "周六自愿表上又写全员签名",
+      "character_goal": "员工要删掉周六到场，发哥要把急活重新排开",
+      "conflict_mechanism": "员工用自愿和全员两个词让发哥认账",
+      "fage_payoff": "发哥划掉周六并把急活改到周一"
+    },
+    "feedback_context": {
+      "read_at": "2026-09-01T10:00:00+08:00",
+      "latest_feedback_ids": [],
+      "keep": [
+        "无"
+      ],
+      "avoid": [
+        "无"
+      ],
+      "publication_data": "无用户提供的发布数据"
+    },
+    "research_scope": {
+      "mode": "broad_pool",
+      "focus_label": "无",
+      "basis": "测试用广谱候选池"
+    }
+  },
+  "topic_strategy": {
+    "topic_mode": "public_tension",
+    "macro_theme": "labor_and_power",
+    "public_question": "写着自愿的周六到场安排，员工能否拒绝已经代签的全员要求？",
+    "opposing_positions": [
+      "急活当前，全员先按表到场",
+      "没有本人同意，自愿安排不能代签"
+    ],
+    "stake_evidence": [
+      {
+        "tag": "规则冲突",
+        "public_proof": "全员签名"
+      },
+      {
+        "tag": "个人时间",
+        "public_proof": "周六这批急活"
+      }
+    ],
+    "novelty_break": {
+      "expected_pattern": "老板解释急活后要求员工顾全大局",
+      "story_break": "发哥划掉周六并把急活改到周一"
+    },
+    "escalation_event": "这张表写着自愿到场，后面怎么又是全员签名？",
+    "heat_basis": {
+      "status": "evergreen_public_tension",
+      "source_ref": "长期公共矛盾；测试未使用实时趋势数据",
+      "claim": "不宣称当前热点"
+    },
+    "selection_ranking": {
+      "pool_id": "batch-craft-v4-topic-pool",
+      "pool_size": 9,
+      "eligible_count": 9,
+      "heat_rank": 1,
+      "final_rank": 1,
+      "heat_evidence": {
+        "freshness_days": 999,
+        "evidence_tier": "no_current_signal",
+        "hotlist_minutes": 0,
+        "distinct_domains": 0,
+        "derivative_work_count": 0
+      },
+      "heat_score": 0,
+      "audience_conflict_score": 90,
+      "fage_fit_score": 90,
+      "shootability_score": 90,
+      "selection_score": 49.5,
+      "evidence_refs": [
+        "老板IP内容库/选题台账.jsonl"
+      ],
+      "decision_note": "测试池按公共冲突、发哥适配和可拍性依次保留前三名"
+    }
+  },
+  "workflow": {
+    "stage": "candidate",
+    "revision_id": "r1",
+    "selected_candidate_id": "",
+    "copy_confirmation": {
+      "confirmed": false,
+      "confirmed_revision_id": "",
+      "confirmed_at": "",
+      "user_quote": "",
+      "content_sha256": ""
+    }
+  },
+  "meta": {
+    "account_name": "发哥",
+    "generation_date": "2026-09-01",
+    "platform": "抖音自然流量",
+    "estimated_duration": "约30-50秒",
+    "scene": "公司办公室",
+    "format": "员工画外音对话轻剧情",
+    "generation_mode": "new_script",
+    "topic_id": "topic-test-1",
+    "filename_topic": "周六自愿表",
+    "version": "auto"
+  },
+  "title": "周六自愿表",
+  "cover_title": "自愿后面为什么写全员",
+  "content_positioning": "职场关系里的具体选择轻剧情",
+  "core_viewpoint": "自愿和全员不能写在同一张表上，安排说不清就由定安排的人改",
+  "content_signature": {
+    "category": "职场关系",
+    "premise": "员工拿着周六自愿到场表要求发哥解释全员签名",
+    "conflict": "员工要守住周末，发哥要处理自己含糊的安排",
+    "hook_mechanism": "具体异常结果",
+    "plot_device": "规则照字面执行",
+    "ending_type": "动作后果",
+    "key_line": "我先来顶，周一重排。"
+  },
+  "creative_diagnostics": {
+    "format_fit": "周六自愿表上又写全员签名可在一个场景靠道具和决定拍完",
+    "audience_resonance": "40+观众常遇到的员工要守住周末，发哥要处理自己含糊的安排",
+    "content_value": "观众能看见自愿和全员不能写在同一张表上，安排说不清就由定安排的人改",
+    "cognitive_gap": "不靠老板讲道理，先让决定造成具体后果",
+    "hook_topic": "周六自愿表上又写全员签名",
+    "hook_gap": "观众想看发哥怎样处理眼前证据",
+    "hook_credibility": "员工把两处红圈的安排表推到发哥面前",
+    "hook_payoff": "发哥划掉周六并把急活改到周一"
+  },
+  "story_blueprint": {
+    "one_sentence_story": "员工拿着周六自愿到场表要求发哥解释全员签名，经过冲突后，发哥划掉周六并把急活改到周一",
+    "structure_mode": "three_part",
+    "fage_want": "发哥要把急活重新排开",
+    "counterparty_want": "员工要删掉周六到场",
+    "why_now": "周六自愿表上又写全员签名",
+    "primary_comedy_engine": "规则照字面执行",
+    "core_choice": "发哥划掉周六并把急活改到周一",
+    "choice_cost": "周六不再要求到场，急活由发哥改到周一",
+    "core_meaning": "自愿和全员不能写在同一张表上，安排说不清就由定安排的人改",
+    "plain_conclusion": "我先来顶，周一重排。",
+    "ending_change": "周六不再要求到场，急活由发哥改到周一",
+    "extra_beat_reason": "无",
+    "expected_effect": "无",
+    "narrative_pattern": "rule_escalation"
+  },
+  "persona_evidence": {
+    "behavior_id": "B02",
+    "expression_id": "E03",
+    "tradeoff_id": "V03",
+    "weakness_id": "W01",
+    "relationship_id": "R01",
+    "visible_action": "发哥划掉表上的周六并重新签字",
+    "action_consequence": "周六不再要求到场，急活由发哥改到周一"
+  },
+  "primary_hook": {
+    "voiceover": "这张表写着自愿到场，后面怎么又是全员签名？",
+    "visual": "员工把两处红圈的安排表推到发哥面前",
+    "screen_text": "自愿后面为什么写全员"
+  },
+  "cast": [
+    {
+      "role": "发哥",
+      "visibility": "露脸",
+      "purpose": "处理现场并承担决定"
+    },
+    {
+      "role": "员工画外音",
+      "visibility": "不露脸",
+      "purpose": "带着自己的目标交涉"
+    }
+  ],
+  "preparation": [
+    {
+      "category": "道具",
+      "items": "员工把两处红圈的安排表推到发哥面前",
+      "notes": "开拍前放到桌边"
+    }
+  ],
+  "segments": [
+    {
+      "time": "0-5秒",
+      "stage": "hook",
+      "speaker": "员工画外音、发哥",
+      "dialogue": "员工画外音：这张表写自愿，后面怎么又是全员，这到底算哪个？发哥：我看看。",
+      "visual_action": "员工把两处红圈的安排表推到发哥面前",
+      "story_change": "周六自愿表上又写全员签名进入发哥眼前",
+      "humor_function": "身份关系带来短停顿",
+      "camera": "固定中景接道具特写",
+      "screen_audio": "自愿后面为什么写全员"
+    },
+    {
+      "time": "5-32秒",
+      "stage": "conflict",
+      "speaker": "员工画外音、发哥",
+      "dialogue": "员工画外音：你说自己选，我本人没碰过，名字已经被人打了勾。发哥：这个勾谁打的？员工画外音：行政，说你默认全员都来。发哥：我说过自愿。员工画外音：那我算自愿，还是算全员？发哥：……全员划掉。",
+      "visual_action": "发哥划掉表上的周六并重新签字",
+      "story_change": "员工用自愿和全员两个词让发哥认账并形成决定",
+      "humor_function": "发哥被具体证据架住后用动作回应",
+      "camera": "中景拍发哥动作",
+      "screen_audio": "保留关键动作原声"
+    },
+    {
+      "time": "32-48秒",
+      "stage": "ending",
+      "speaker": "发哥",
+      "dialogue": "员工画外音：周六这批急活怎么办？发哥：我先来顶，周一重排。",
+      "visual_action": "发哥划掉表上的周六并重新签字",
+      "story_change": "周六不再要求到场，急活由发哥改到周一",
+      "humor_function": "无，承担剧情推进",
+      "camera": "中景自然收住",
+      "screen_audio": "无"
+    }
+  ],
+  "full_dialogue": [
+    {
+      "speaker": "员工画外音",
+      "line": "这张表写自愿，后面怎么又是全员，这到底算哪个？"
+    },
+    {
+      "speaker": "发哥",
+      "line": "我看看。"
+    },
+    {
+      "speaker": "员工画外音",
+      "line": "你说自己选，我本人没碰过，名字已经被人打了勾。"
+    },
+    {
+      "speaker": "发哥",
+      "line": "这个勾谁打的？"
+    },
+    {
+      "speaker": "员工画外音",
+      "line": "行政，说你默认全员都来。"
+    },
+    {
+      "speaker": "发哥",
+      "line": "我说过自愿。"
+    },
+    {
+      "speaker": "员工画外音",
+      "line": "那我算自愿，还是算全员？"
+    },
+    {
+      "speaker": "发哥",
+      "line": "……全员划掉。"
+    },
+    {
+      "speaker": "员工画外音",
+      "line": "周六这批急活怎么办？"
+    },
+    {
+      "speaker": "发哥",
+      "line": "我先来顶，周一重排。"
+    }
+  ],
+  "comment_prompt": "无",
+  "shooting_notes": [
+    "保留发哥动作前的短停顿，不追加演讲"
+  ],
+  "research_summary": "读取本地历史，只借鉴短对话结构并避开旧事件",
+  "research_sources": [
+    {
+      "source_kind": "local_history",
+      "title": "老板IP历史选题台账",
+      "locator": "老板IP内容库/选题台账.jsonl",
+      "source_date": "2026-09-01",
+      "retrieved_at": "2026-09-01",
+      "metrics_provided": false,
+      "metric_note": "无用户提供的发布数据",
+      "borrowed_mechanism": "只读取历史事件用于查重"
+    }
+  ],
+  "continuity_claims": [],
+  "dialogue_design": {
+    "mode": "keyword_rebound",
+    "anchor_word": "自愿",
+    "payoff_method": "自愿从员工选择回到发哥责任",
+    "jargon_resolution": "无"
+  },
+  "argument_engine": {
+    "audience_takeaway": "写着自愿的安排由老板提出时，拒绝成本也应由老板承担",
+    "common_belief": "员工不愿参加就直接拒绝",
+    "non_obvious_claim": "自愿不能只免除老板责任，还要降低员工拒绝的代价",
+    "competing_truths": [
+      "临时任务需要有人处理，管理者必须安排人手",
+      "写明自愿就不该让拒绝者承担隐性惩罚"
+    ],
+    "causal_proof": [
+      {
+        "beat": 1,
+        "new_information": "名单上的自愿由发哥亲口提出",
+        "caused_action": "员工要求发哥也写下自己的选择"
+      },
+      {
+        "beat": 2,
+        "new_information": "发哥发现自己没有被列入安排",
+        "caused_action": "发哥收回只让员工承担的名单"
+      },
+      {
+        "beat": 3,
+        "new_information": "客户交期仍需有人负责",
+        "caused_action": "发哥改排自己并承担改期"
+      }
+    ],
+    "fage_entanglement": "规则由发哥提出，他本人却被排除在自愿成本之外",
+    "action_cost": "发哥亲自进入安排并承担客户改期",
+    "ending_without_slogan": true
+  },
+  "semantic_review": {
+    "packet_sha256": "ea50e49ce452003ae80d0cb04b03a27798258cc06ea2542230a777026bf2a53a",
+    "reviews": [
+      {
+        "role": "viewpoint",
+        "input_sha256": "ea50e49ce452003ae80d0cb04b03a27798258cc06ea2542230a777026bf2a53a",
+        "target_visible": false,
+        "verdict": "pass",
+        "inferred_takeaway": "写着自愿的安排由老板提出时，拒绝成本也应由老板承担",
+        "debate_sides": [
+          "临时任务需要有人处理，管理者必须安排人手",
+          "写明自愿就不该让拒绝者承担隐性惩罚"
+        ],
+        "generic_moral": false,
+        "evidence": [
+          "公开对白证据"
+        ]
+      },
+      {
+        "role": "story",
+        "input_sha256": "ea50e49ce452003ae80d0cb04b03a27798258cc06ea2542230a777026bf2a53a",
+        "target_visible": false,
+        "verdict": "pass",
+        "opening_event": "名单已经签下",
+        "midpoint_change": "发哥发现自己未承担自愿成本",
+        "caused_action": "发哥重排名单",
+        "removable_beats": []
+      },
+      {
+        "role": "persona",
+        "input_sha256": "ea50e49ce452003ae80d0cb04b03a27798258cc06ea2542230a777026bf2a53a",
+        "target_visible": false,
+        "verdict": "pass",
+        "fage_entanglement": "规则由发哥提出",
+        "visible_weakness_or_interest": "发哥起初把自己排除在外",
+        "action_cost": "发哥进入安排并承担改期",
+        "generic_boss_substitution": false
+      }
+    ],
+    "aggregate": {
+      "all_pass": true,
+      "target_match": true,
+      "mismatch_reason": "无",
+      "reviewed_at": "2026-09-02T00:00:00+08:00"
+    }
+  }
+}

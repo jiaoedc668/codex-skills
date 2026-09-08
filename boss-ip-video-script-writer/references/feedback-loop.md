@@ -1,0 +1,26 @@
+# 显式反馈与双形式跟踪
+
+老板IP内容库/反馈台账.jsonl只能追加用户真实原话，旧字节不可改写。沉默、猜测、机器通过、生成Word均不能转为人工质量评价。
+
+## 事件
+沿用schema2事件与history_manager.py校验，新v6事件增加format=story或monologue；历史事件不回填形式。
+- candidate_selection只表示选中，含batch_id/candidate_id/user_quote。
+- candidate_evaluation绑定当前revision_id，evaluation仅direct_shoot/minor_revision/major_revision/rejected；reason_codes、preserve、avoid来自明确反馈。
+- candidate_length_evaluation只记录too_short/appropriate/too_long，不改变可拍数量。
+- copy_confirmation绑定当前revision_id和完整candidate_doc的content_sha256，不等于可拍。
+- revision记录from_revision/to_revision/changes与原话，不覆盖旧稿。
+- publication_metrics只用用户提供的source/data_date/metrics，不推断传播效果。
+
+只有“不行”时记淘汰，原因待明，不擅自把题材或人物关系列为禁区。允许精修或Word不能替代copy_confirmation，明确专项Word授权走独立文件而非虚构反馈事件。
+
+## 读取与写入
+使用history_manager.py recent-feedback读取近期投影，record-feedback追加单事件；反馈上下文与候选必须一致。原事件JSON保存用户原话，再调用现成校验器，不能手改账本内容。
+
+## v6状态
+schema2 manifest绑定format、batch_id、submitted_at、正好三份candidate_id/revision_id与可证伪root_cause。acceptance_state.py对新manifest调用format_acceptance，仅统计同批同形式当前修订的显式评价；旧v5事件和成绩不能自动继承为口播通过。
+
+剧情与口播分别跟踪。全部三份评价前保持pending；至少两份direct_shoot才是这一批的用户通过，不代表未来稿稳定可拍。未通过须保留失败稿改变根因，同根因连续三次失败推倒方法；同形式退步标注回退需要，记录比较。
+
+用户明确只改某条或某段时，优先限定修订，不自动重做其他已认可正文。初稿与修订结果分别报告，不能将精修通过倒写为初稿成功。新候选通常展示后等逐条评价；七篇专项任务已授权直接交Word，不因没有新版人类评分阻塞交付，也不代填评价。
+
+历史schema1 manifest继续使用原v5状态机读取；不要把新旧manifest混在同一次新形式统计。人工认可只由真实用户事件支持，生成器与审稿器不能自行追加。

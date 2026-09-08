@@ -1,0 +1,171 @@
+{
+  "schema_version": 5,
+  "pool_id": "pool-20260904-direct-01",
+  "requested_candidate_count": 3,
+  "prospects": [
+    {
+      "topic_id": "topic-1",
+      "title": "员工家里急用钱，公司该帮到哪一步",
+      "topic_kind": "current_issue",
+      "priority_category": "money_housing_pension_family",
+      "research_evidence": {
+        "fact_sources": [
+          {
+            "title": "测试来源 fact-1",
+            "url": "https://example.com/fact-1",
+            "source_date": "2026-09-02",
+            "retrieved_at": "2026-09-04",
+            "supports": "支持当前议题中可核验的具体事实",
+            "limits": "测试夹具不代表生产研究或真实热度"
+          }
+        ],
+        "heat_signals": [
+          {
+            "title": "测试来源 heat-1",
+            "url": "https://example.com/heat-1",
+            "source_date": "2026-09-03",
+            "retrieved_at": "2026-09-04",
+            "supports": "支持当前议题中可核验的具体事实",
+            "limits": "测试夹具不代表生产研究或真实热度"
+          }
+        ]
+      },
+      "production_case": {
+        "audience_stake": "中年家庭同时面对医疗支出和房贷现金流",
+        "concrete_event": "员工当晚要补齐父亲住院押金",
+        "concrete_anchor": "押金还差两万元",
+        "strongest_counterargument": "公司不能凭口头困难替员工家庭兜底",
+        "fage_choice": "公司预支一万，发哥个人借一万并写借条",
+        "fage_cost": "发哥承担一万元个人借款风险",
+        "ending_consequence": "员工当天保住床位并承担还款责任",
+        "audience_response_space": "观众可以争论老板该帮到哪一步"
+      },
+      "veto_reasons": []
+    },
+    {
+      "topic_id": "topic-2",
+      "title": "父母卖房给子女首付，要先算哪笔账",
+      "topic_kind": "evergreen",
+      "priority_category": "money_housing_pension_family",
+      "research_evidence": {
+        "fact_sources": [
+          {
+            "title": "测试来源 fact-2",
+            "url": "https://example.com/fact-2",
+            "source_date": "2026-08-20",
+            "retrieved_at": "2026-09-04",
+            "supports": "支持当前议题中可核验的具体事实",
+            "limits": "测试夹具不代表生产研究或真实热度"
+          }
+        ],
+        "recurrence_sources": [
+          {
+            "title": "测试来源 recurrence-old-2",
+            "url": "https://example.com/recurrence-old-2",
+            "source_date": "2026-01-01",
+            "retrieved_at": "2026-09-04",
+            "supports": "支持当前议题中可核验的具体事实",
+            "limits": "测试夹具不代表生产研究或真实热度"
+          },
+          {
+            "title": "测试来源 recurrence-new-2",
+            "url": "https://example.com/recurrence-new-2",
+            "source_date": "2026-07-01",
+            "retrieved_at": "2026-09-04",
+            "supports": "支持当前议题中可核验的具体事实",
+            "limits": "测试夹具不代表生产研究或真实热度"
+          }
+        ],
+        "high_interaction_sources": [
+          {
+            "title": "测试来源 interaction-2",
+            "url": "https://example.com/interaction-2",
+            "source_date": "2026-07-01",
+            "retrieved_at": "2026-09-04",
+            "supports": "支持当前议题中可核验的具体事实",
+            "limits": "测试夹具不代表生产研究或真实热度",
+            "visible_interaction": "页面公开显示10万次点赞"
+          }
+        ]
+      },
+      "production_case": {
+        "audience_stake": "父母养老资金与子女住房压力发生正面冲突",
+        "concrete_event": "母亲准备卖掉唯一住房替儿子补首付",
+        "concrete_anchor": "卖房后每月租金三千元",
+        "strongest_counterargument": "父母自愿处置房产也有帮助子女的权利",
+        "fage_choice": "先算十年租金，再决定只支持可承受的一部分",
+        "fage_cost": "发哥承认自己无权替母亲决定并暂停劝说",
+        "ending_consequence": "母亲收回当天签约决定并带账单回家讨论",
+        "audience_response_space": "观众可以争论父母的钱是否应优先养老"
+      },
+      "veto_reasons": []
+    },
+    {
+      "topic_id": "topic-3",
+      "title": "四十岁失业后，要不要先瞒着家人",
+      "topic_kind": "current_issue",
+      "priority_category": "midlife_work_business",
+      "research_evidence": {
+        "fact_sources": [
+          {
+            "title": "测试来源 fact-3",
+            "url": "https://example.com/fact-3",
+            "source_date": "2026-09-02",
+            "retrieved_at": "2026-09-04",
+            "supports": "支持当前议题中可核验的具体事实",
+            "limits": "测试夹具不代表生产研究或真实热度"
+          }
+        ],
+        "heat_signals": [
+          {
+            "title": "测试来源 heat-3",
+            "url": "https://example.com/heat-3",
+            "source_date": "2026-09-03",
+            "retrieved_at": "2026-09-04",
+            "supports": "支持当前议题中可核验的具体事实",
+            "limits": "测试夹具不代表生产研究或真实热度"
+          }
+        ]
+      },
+      "production_case": {
+        "audience_stake": "四十岁失业者在收入和体面之间必须立刻选择",
+        "concrete_event": "朋友瞒着家人去做夜班分拣",
+        "concrete_anchor": "试岗一晚能拿三百元",
+        "strongest_counterargument": "暂时隐瞒能避免家人焦虑和无谓争执",
+        "fage_choice": "先去试岗，但当天把收入和风险告诉家人",
+        "fage_cost": "发哥陪朋友跑一趟并承担劝错的关系压力",
+        "ending_consequence": "朋友发出消息后走进试岗仓库",
+        "audience_response_space": "观众可以争论失业后该不该向家人坦白"
+      },
+      "veto_reasons": []
+    }
+  ],
+  "pairwise_decisions": [
+    {
+      "left_topic_id": "topic-1",
+      "right_topic_id": "topic-2",
+      "preferred_topic_id": "topic-1",
+      "evidence_reason": "两题证据均完整，topic-1 的近期事实更直接",
+      "production_reason": "topic-1 的两万元押金能在前两句形成选择"
+    },
+    {
+      "left_topic_id": "topic-1",
+      "right_topic_id": "topic-3",
+      "preferred_topic_id": "topic-3",
+      "evidence_reason": "两题均有近七日信号，topic-3 的讨论边界更清楚",
+      "production_reason": "topic-3 的坦白动作能在单场景落地"
+    },
+    {
+      "left_topic_id": "topic-2",
+      "right_topic_id": "topic-3",
+      "preferred_topic_id": "topic-2",
+      "evidence_reason": "topic-2 同时具备跨期复现和公开互动证据",
+      "production_reason": "卖房与十年租金形成可见的具体账"
+    }
+  ],
+  "selected_topic_ids": [
+    "topic-1",
+    "topic-2",
+    "topic-3"
+  ]
+}

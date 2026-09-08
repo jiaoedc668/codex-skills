@@ -1,0 +1,241 @@
+{
+  "pool_id": "batch-20260902-craft-v3-01-topic-pool",
+  "pool_size": 9,
+  "eligible_count": 8,
+  "weights": {
+    "heat": 0.45,
+    "audience_conflict": 0.2,
+    "fage_fit": 0.2,
+    "shootability": 0.15
+  },
+  "ranked": [
+    {
+      "topic_id": "zero-bride-price-income-proof",
+      "title": "零彩礼却要多开一万收入证明",
+      "heat_evidence": {
+        "freshness_days": 7,
+        "evidence_tier": "multiple_dated_reports",
+        "hotlist_minutes": 0,
+        "distinct_domains": 3,
+        "derivative_work_count": 2
+      },
+      "heat_components": {
+        "freshness": 18,
+        "platform_signal": 15,
+        "cross_platform_spread": 25,
+        "derivative_density": 15
+      },
+      "heat_score": 73,
+      "audience_conflict_score": 92,
+      "fage_fit_score": 82,
+      "shootability_score": 85,
+      "selection_score": 80.4,
+      "veto_reasons": [],
+      "heat_rank": 2,
+      "final_rank": 1
+    },
+    {
+      "topic_id": "paid-leave-proof",
+      "title": "年假为什么还要证明有必要",
+      "heat_evidence": {
+        "freshness_days": 17,
+        "evidence_tier": "multiple_dated_reports",
+        "hotlist_minutes": 0,
+        "distinct_domains": 3,
+        "derivative_work_count": 1
+      },
+      "heat_components": {
+        "freshness": 10,
+        "platform_signal": 15,
+        "cross_platform_spread": 25,
+        "derivative_density": 8
+      },
+      "heat_score": 58,
+      "audience_conflict_score": 96,
+      "fage_fit_score": 96,
+      "shootability_score": 98,
+      "selection_score": 79.2,
+      "veto_reasons": [],
+      "heat_rank": 4,
+      "final_rank": 2
+    },
+    {
+      "topic_id": "emotional-consumption-plush",
+      "title": "年轻人为什么为哭脸玩偶买单",
+      "heat_evidence": {
+        "freshness_days": 2,
+        "evidence_tier": "multiple_dated_reports",
+        "hotlist_minutes": 0,
+        "distinct_domains": 2,
+        "derivative_work_count": 2
+      },
+      "heat_components": {
+        "freshness": 25,
+        "platform_signal": 15,
+        "cross_platform_spread": 18,
+        "derivative_density": 15
+      },
+      "heat_score": 73,
+      "audience_conflict_score": 75,
+      "fage_fit_score": 72,
+      "shootability_score": 85,
+      "selection_score": 75.0,
+      "veto_reasons": [],
+      "heat_rank": 1,
+      "final_rank": 3
+    },
+    {
+      "topic_id": "mooncake-family-privacy",
+      "title": "发月饼为何强收父母住址电话",
+      "heat_evidence": {
+        "freshness_days": 17,
+        "evidence_tier": "multiple_dated_reports",
+        "hotlist_minutes": 0,
+        "distinct_domains": 2,
+        "derivative_work_count": 1
+      },
+      "heat_components": {
+        "freshness": 10,
+        "platform_signal": 15,
+        "cross_platform_spread": 18,
+        "derivative_density": 8
+      },
+      "heat_score": 51,
+      "audience_conflict_score": 90,
+      "fage_fit_score": 94,
+      "shootability_score": 97,
+      "selection_score": 74.3,
+      "veto_reasons": [],
+      "heat_rank": 5,
+      "final_rank": 4
+    },
+    {
+      "topic_id": "interest-consumption",
+      "title": "兴趣消费从买东西变成找同类",
+      "heat_evidence": {
+        "freshness_days": 4,
+        "evidence_tier": "multiple_dated_reports",
+        "hotlist_minutes": 0,
+        "distinct_domains": 2,
+        "derivative_work_count": 1
+      },
+      "heat_components": {
+        "freshness": 18,
+        "platform_signal": 15,
+        "cross_platform_spread": 18,
+        "derivative_density": 8
+      },
+      "heat_score": 59,
+      "audience_conflict_score": 70,
+      "fage_fit_score": 70,
+      "shootability_score": 82,
+      "selection_score": 66.85,
+      "veto_reasons": [],
+      "heat_rank": 3,
+      "final_rank": 5
+    },
+    {
+      "topic_id": "dual-worker-childcare",
+      "title": "双职工家庭假期带娃难",
+      "heat_evidence": {
+        "freshness_days": 20,
+        "evidence_tier": "multiple_dated_reports",
+        "hotlist_minutes": 0,
+        "distinct_domains": 2,
+        "derivative_work_count": 0
+      },
+      "heat_components": {
+        "freshness": 10,
+        "platform_signal": 15,
+        "cross_platform_spread": 18,
+        "derivative_density": 0
+      },
+      "heat_score": 43,
+      "audience_conflict_score": 88,
+      "fage_fit_score": 86,
+      "shootability_score": 78,
+      "selection_score": 65.85,
+      "veto_reasons": [],
+      "heat_rank": 7,
+      "final_rank": 6
+    },
+    {
+      "topic_id": "autumn-recruitment-entry-jobs",
+      "title": "秋招入门岗位越来越难抢",
+      "heat_evidence": {
+        "freshness_days": 21,
+        "evidence_tier": "multiple_dated_reports",
+        "hotlist_minutes": 0,
+        "distinct_domains": 2,
+        "derivative_work_count": 0
+      },
+      "heat_components": {
+        "freshness": 10,
+        "platform_signal": 15,
+        "cross_platform_spread": 18,
+        "derivative_density": 0
+      },
+      "heat_score": 43,
+      "audience_conflict_score": 90,
+      "fage_fit_score": 78,
+      "shootability_score": 80,
+      "selection_score": 64.95,
+      "veto_reasons": [],
+      "heat_rank": 6,
+      "final_rank": 7
+    },
+    {
+      "topic_id": "personal-account-company-video",
+      "title": "公司视频发在员工个人账号归谁",
+      "heat_evidence": {
+        "freshness_days": 120,
+        "evidence_tier": "single_dated_source",
+        "hotlist_minutes": 0,
+        "distinct_domains": 1,
+        "derivative_work_count": 1
+      },
+      "heat_components": {
+        "freshness": 0,
+        "platform_signal": 8,
+        "cross_platform_spread": 8,
+        "derivative_density": 8
+      },
+      "heat_score": 24,
+      "audience_conflict_score": 86,
+      "fage_fit_score": 80,
+      "shootability_score": 86,
+      "selection_score": 56.9,
+      "veto_reasons": [],
+      "heat_rank": 9,
+      "final_rank": 8
+    }
+  ],
+  "vetoed": [
+    {
+      "topic_id": "family-gift-address",
+      "title": "企业福利要不要直接寄给家属",
+      "heat_evidence": {
+        "freshness_days": 14,
+        "evidence_tier": "single_dated_source",
+        "hotlist_minutes": 0,
+        "distinct_domains": 1,
+        "derivative_work_count": 0
+      },
+      "heat_components": {
+        "freshness": 10,
+        "platform_signal": 8,
+        "cross_platform_spread": 8,
+        "derivative_density": 0
+      },
+      "heat_score": 26,
+      "audience_conflict_score": 75,
+      "fage_fit_score": 83,
+      "shootability_score": 92,
+      "selection_score": 57.1,
+      "veto_reasons": [
+        "与父母住址电话方向过近，仅保留证据不进入候选"
+      ],
+      "heat_rank": 8
+    }
+  ]
+}

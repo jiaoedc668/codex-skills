@@ -1,0 +1,346 @@
+{
+  "schema_version": 3,
+  "candidate": {
+    "batch_id": "batch-20260902-craft-v3-01",
+    "candidate_id": "batch-20260902-craft-v3-01-c2",
+    "position": 2,
+    "selection_status": "awaiting_selection",
+    "difference_axes": {
+      "inciting_incident": "员工请三天年假，人事要求先证明这假有必要",
+      "character_goal": "员工要休三天年假，发哥要补上客户交接缺口",
+      "conflict_mechanism": "先亮出发哥进入交接名单的结果，再倒回十分钟前追问必要二字",
+      "fage_payoff": "发哥拿起名单写上自己并重排客户交接"
+    },
+    "feedback_context": {
+      "latest_feedback_ids": [
+        "feedback-20260901-workplace-r2-c1-rejected",
+        "feedback-20260901-workplace-r2-c2-rejected",
+        "feedback-20260901-workplace-r2-c3-rejected",
+        "feedback-20260901-broad-r5-c1-rejected",
+        "feedback-20260901-broad-r5-c2-rejected",
+        "feedback-20260901-broad-r5-c3-minor",
+        "feedback-20260901-broad-r5-selection-c3",
+        "feedback-20260901-broad-r5-c3-r2",
+        "feedback-20260901-broad-r5-c3-r2-prop-logic",
+        "feedback-20260901-broad-r5-c3-r2-jargon",
+        "feedback-20260901-broad-r5-c3-r3",
+        "feedback-20260902-broad-r5-c3-v2-direct"
+      ],
+      "keep": [
+        "第3个主题和事件方向还可以，小改后可以用",
+        "保留观众先以为发哥要签工资预支、结果签的是批假的反转方向",
+        "保留让员工陪父亲继续处理合同和付款问题的具体行动",
+        "V2这一版暂且纳入可拍"
+      ],
+      "avoid": [
+        "毫无意思、没有新意、没有热度、太过于泛泛的一般日常",
+        "主题选择有问题，热度优先级不足，当前方向不采用",
+        "选题后直接凭空写文案；应先参考相关二次创作并标注采用链接或作品",
+        "前一句明确点名工资预支单，后一句把同一道具当请假单，造成前后逻辑矛盾",
+        "第三方等需要观众停顿解释、却不承担剧情作用的偏术语用词"
+      ],
+      "publication_data": "无用户提供的发布数据",
+      "read_at": "2026-09-02T15:14:21+08:00"
+    },
+    "research_scope": {
+      "mode": "broad_pool",
+      "focus_label": "无",
+      "basis": "跨职场、婚产、隐私、消费、家庭等九个公开议题统一按热度45%排序"
+    }
+  },
+  "topic_strategy": {
+    "topic_mode": "current_issue",
+    "macro_theme": "labor_and_power",
+    "public_question": "员工请法定年假时，公司能不能先审查休假的理由是否必要？",
+    "opposing_positions": [
+      "只要工作有人接，年假无需交代理由",
+      "客户无人接时，公司可以先问清休假必要性"
+    ],
+    "stake_evidence": [
+      {
+        "tag": "个人时间",
+        "public_proof": "三天年假"
+      },
+      {
+        "tag": "规则冲突",
+        "public_proof": "证明这假有必要"
+      }
+    ],
+    "novelty_break": {
+      "expected_pattern": "老板追问请假理由，员工靠一句硬话赢下争论",
+      "story_break": "发哥说把我名字写上，亲自补进客户交接名单"
+    },
+    "escalation_event": "员工请三天年假，人事要求先证明这假有必要",
+    "heat_basis": {
+      "status": "dated_source",
+      "source_ref": "https://finance.eastmoney.com/a/202608053832727981.html",
+      "claim": "2026-08-05公开报道与相关作品共同支持本轮研究"
+    },
+    "selection_ranking": {
+      "pool_id": "batch-20260902-craft-v3-01-topic-pool",
+      "pool_size": 9,
+      "eligible_count": 8,
+      "heat_rank": 4,
+      "final_rank": 2,
+      "heat_evidence": {
+        "freshness_days": 17,
+        "evidence_tier": "multiple_dated_reports",
+        "hotlist_minutes": 0,
+        "distinct_domains": 3,
+        "derivative_work_count": 1
+      },
+      "heat_score": 58,
+      "audience_conflict_score": 96,
+      "fage_fit_score": 96,
+      "shootability_score": 98,
+      "selection_score": 79.2,
+      "evidence_refs": [
+        "https://finance.eastmoney.com/a/202608053832727981.html",
+        "https://www.douyin.com/video/7601458007222688883"
+      ],
+      "decision_note": "先按公开时效与传播证据计热度，再叠加公共冲突、发哥行动适配和低成本可拍性"
+    }
+  },
+  "workflow": {
+    "stage": "candidate",
+    "revision_id": "r1",
+    "selected_candidate_id": "",
+    "copy_confirmation": {
+      "confirmed": false,
+      "confirmed_revision_id": "",
+      "confirmed_at": "",
+      "user_quote": "",
+      "content_sha256": ""
+    }
+  },
+  "meta": {
+    "account_name": "发哥",
+    "generation_date": "2026-09-02",
+    "platform": "抖音自然流量",
+    "estimated_duration": "约35-50秒",
+    "scene": "公司办公室",
+    "format": "员工画外音对话轻剧情",
+    "generation_mode": "new_script",
+    "topic_id": "paid-leave-proof",
+    "filename_topic": "年假还要证明必要？",
+    "version": "r1"
+  },
+  "title": "年假还要证明必要？",
+  "cover_title": "年假还要证明有必要？",
+  "content_positioning": "职场权利中的异常选择轻剧情",
+  "core_viewpoint": "年假可以协调日期，不该审问理由；没人接活就由定安排的人补上",
+  "content_signature": {
+    "category": "职场权利",
+    "premise": "员工请三天年假却被要求证明有必要，发哥把自己写进客户交接名单",
+    "conflict": "员工要依法休年假，人事担心三天无人接客户，发哥必须承担排班成本",
+    "hook_mechanism": "具体异常结果",
+    "plot_device": "先亮出发哥进入交接名单的结果，再倒回十分钟前追问必要二字",
+    "ending_type": "老板承担动作成本",
+    "key_line": "上午我顶，下午分给两人。"
+  },
+  "creative_diagnostics": {
+    "format_fit": "员工请三天年假，人事要求先证明这假有必要可在办公室用一张表和一次动作拍完",
+    "audience_resonance": "员工请法定年假时，公司能不能先审查休假的理由是否必要？",
+    "content_value": "年假可以协调日期，不该审问理由；没人接活就由定安排的人补上",
+    "cognitive_gap": "发哥说把我名字写上，亲自补进客户交接名单",
+    "hook_topic": "员工请三天年假，人事要求先证明这假有必要",
+    "hook_gap": "观众会追问发哥最终签什么、删什么或承担什么",
+    "hook_credibility": "镜头先拍客户交接名单，发哥名字出现在员工休假三天的空档里",
+    "hook_payoff": "发哥拿起名单写上自己并重排客户交接"
+  },
+  "story_blueprint": {
+    "one_sentence_story": "员工请三天年假却被要求证明有必要，发哥把自己写进客户交接名单，最后发哥拿起名单写上自己并重排客户交接",
+    "structure_mode": "four_part",
+    "narrative_pattern": "result_first_flashback",
+    "fage_want": "发哥要补上客户交接缺口",
+    "counterparty_want": "员工要休三天年假",
+    "why_now": "员工请三天年假，人事要求先证明这假有必要",
+    "primary_comedy_engine": "先亮出发哥进入交接名单的结果，再倒回十分钟前追问必要二字",
+    "core_choice": "发哥拿起名单写上自己并重排客户交接",
+    "choice_cost": "员工的三天年假保留，上午由发哥顶，下午分给两名同事",
+    "core_meaning": "年假可以协调日期，不该审问理由；没人接活就由定安排的人补上",
+    "plain_conclusion": "上午我顶，下午分给两人。",
+    "ending_change": "员工的三天年假保留，上午由发哥顶，下午分给两名同事",
+    "extra_beat_reason": "先露出老板承担成本的结果，再回看冲突，避免常规顺叙",
+    "expected_effect": "观众先追问发哥为什么进名单，再看到必要二字被具体排班化解"
+  },
+  "dialogue_design": {
+    "mode": "rapid_exchange",
+    "anchor_word": "必要",
+    "payoff_method": "先给出发哥进交接名单的结果，再倒回十分钟前解释原因",
+    "jargon_resolution": "公开对白不使用偏术语，所有冲突落到表格、数字、日期和具体动作"
+  },
+  "persona_evidence": {
+    "behavior_id": "B01",
+    "expression_id": "E03",
+    "tradeoff_id": "V01",
+    "weakness_id": "W02",
+    "relationship_id": "R01",
+    "visible_action": "发哥拿起名单写上自己并重排客户交接",
+    "action_consequence": "员工的三天年假保留，上午由发哥顶，下午分给两名同事"
+  },
+  "primary_hook": {
+    "voiceover": "发哥，你怎么把自己排进我休假那三天了？",
+    "visual": "镜头先拍客户交接名单，发哥名字出现在员工休假三天的空档里",
+    "screen_text": "年假还要证明有必要？"
+  },
+  "cast": [
+    {
+      "role": "发哥",
+      "visibility": "露脸",
+      "purpose": "被具体证据架住后作决定并承担成本"
+    },
+    {
+      "role": "员工画外音",
+      "visibility": "不露脸",
+      "purpose": "带着自己的明确目标交涉"
+    }
+  ],
+  "preparation": [
+    {
+      "category": "道具",
+      "items": "镜头先拍客户交接名单，发哥名字出现在员工休假三天的空档里",
+      "notes": "只用纸质表、红笔或电脑屏幕完成"
+    }
+  ],
+  "segments": [
+    {
+      "time": "0-10秒",
+      "stage": "hook",
+      "speaker": "员工画外音、发哥",
+      "dialogue": "员工画外音：发哥，你怎么把自己排进我休假那三天了？发哥：先看十分钟前。",
+      "visual_action": "镜头先拍客户交接名单，发哥名字出现在员工休假三天的空档里",
+      "story_change": "先看到发哥已经进入三天交接名单",
+      "humor_function": "用短停顿和关系错位推进，不另加段子",
+      "camera": "固定中景接道具特写",
+      "screen_audio": "年假还要证明有必要？"
+    },
+    {
+      "time": "10-20秒",
+      "stage": "turn",
+      "speaker": "员工画外音、发哥",
+      "dialogue": "员工画外音：我请三天年假，人事让我先证明这假有必要。发哥：年假还要证明必要？员工画外音：不写理由，就说那三天没人接我的客户。",
+      "visual_action": "字幕显示十分钟前，员工递上年假申请",
+      "story_change": "时间倒回十分钟前，必要性审查被摆上桌",
+      "humor_function": "用短停顿和关系错位推进，不另加段子",
+      "camera": "固定中景接道具特写",
+      "screen_audio": "保留现场短停顿"
+    },
+    {
+      "time": "20-30秒",
+      "stage": "conflict",
+      "speaker": "发哥、员工画外音",
+      "dialogue": "发哥：日期可以排，理由不用审。员工画外音：可谁来接？名单上确实没人。发哥：把我名字写上。",
+      "visual_action": "发哥拿起名单写上自己并重排客户交接",
+      "story_change": "无人接客户的实际缺口被确认，发哥拿起名单写上自己",
+      "humor_function": "用短停顿和关系错位推进，不另加段子",
+      "camera": "固定中景接道具特写",
+      "screen_audio": "保留现场短停顿"
+    },
+    {
+      "time": "30-40秒",
+      "stage": "ending",
+      "speaker": "员工画外音、发哥",
+      "dialogue": "员工画外音：所以你真替我顶三天？发哥：上午我顶，下午分给两人。",
+      "visual_action": "镜头停在补完的交接名单",
+      "story_change": "三天年假保留并形成上午与下午的交接安排",
+      "humor_function": "用短停顿和关系错位推进，不另加段子",
+      "camera": "固定中景接道具特写",
+      "screen_audio": "保留现场短停顿"
+    }
+  ],
+  "full_dialogue": [
+    {
+      "speaker": "员工画外音",
+      "line": "发哥，你怎么把自己排进我休假那三天了？"
+    },
+    {
+      "speaker": "发哥",
+      "line": "先看十分钟前。"
+    },
+    {
+      "speaker": "员工画外音",
+      "line": "我请三天年假，人事让我先证明这假有必要。"
+    },
+    {
+      "speaker": "发哥",
+      "line": "年假还要证明必要？"
+    },
+    {
+      "speaker": "员工画外音",
+      "line": "不写理由，就说那三天没人接我的客户。"
+    },
+    {
+      "speaker": "发哥",
+      "line": "日期可以排，理由不用审。"
+    },
+    {
+      "speaker": "员工画外音",
+      "line": "可谁来接？名单上确实没人。"
+    },
+    {
+      "speaker": "发哥",
+      "line": "把我名字写上。"
+    },
+    {
+      "speaker": "员工画外音",
+      "line": "所以你真替我顶三天？"
+    },
+    {
+      "speaker": "发哥",
+      "line": "上午我顶，下午分给两人。"
+    }
+  ],
+  "comment_prompt": "你更在意哪一步？只评故事是否愿意拍。",
+  "shooting_notes": [
+    "按结构标注拍摄，不补宏大总结",
+    "发哥动作前保留半秒真实停顿"
+  ],
+  "research_summary": "先检索当前公共议题，再看相关短视频的开场、反转和道具用法；只借结构机制，不复制原句、口头禅或人物设定。",
+  "research_sources": [
+    {
+      "source_kind": "web",
+      "title": "多省份发文推动落实职工带薪休假，多地要求领导干部带头休假",
+      "locator": "https://finance.eastmoney.com/a/202608053832727981.html",
+      "source_date": "2026-08-05",
+      "retrieved_at": "2026-09-02",
+      "metrics_provided": false,
+      "metric_note": "仅作公开热点或创作机制研究；无用户提供的发布数据",
+      "borrowed_mechanism": "记录当前议题与发生日期"
+    },
+    {
+      "source_kind": "web",
+      "title": "员工请假理由让老板措不及防",
+      "locator": "https://www.douyin.com/video/7601458007222688883",
+      "source_date": "未显示",
+      "retrieved_at": "2026-09-02",
+      "metrics_provided": false,
+      "metric_note": "仅作公开热点或创作机制研究；无用户提供的发布数据",
+      "borrowed_mechanism": "员工第一句直接抛请假冲突，老板用短反应接住"
+    },
+    {
+      "source_kind": "local_history",
+      "title": "老板IP历史选题台账",
+      "locator": "老板IP内容库/选题台账.jsonl",
+      "source_date": "2026-09-02",
+      "retrieved_at": "2026-09-02",
+      "metrics_provided": false,
+      "metric_note": "仅作公开热点或创作机制研究；无用户提供的发布数据",
+      "borrowed_mechanism": "只读查重，不登记新状态"
+    }
+  ],
+  "creative_adaptation": {
+    "reviewed_works": [
+      {
+        "title": "员工请假理由让老板措不及防",
+        "locator": "https://www.douyin.com/video/7601458007222688883",
+        "decision": "adopted",
+        "observed_mechanism": "员工第一句直接抛请假冲突，老板用短反应接住",
+        "adopted_mechanism": "采用开门见山的请假冲突和短句接话，不采用原台词与人物关系",
+        "copyright_boundary": "仅借抽象叙事装置，未复制原台词、镜头顺序、人物关系或标志性表达"
+      }
+    ],
+    "adoption_disclosure": "采用《员工请假理由让老板措不及防》的抽象机制：采用开门见山的请假冲突和短句接话，不采用原台词与人物关系"
+  },
+  "continuity_claims": []
+}

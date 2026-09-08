@@ -1,0 +1,335 @@
+{
+  "schema_version": 3,
+  "candidate": {
+    "batch_id": "batch-20260902-craft-v3-01",
+    "candidate_id": "batch-20260902-craft-v3-01-c1",
+    "position": 1,
+    "selection_status": "awaiting_selection",
+    "difference_axes": {
+      "inciting_incident": "员工说一分彩礼没出，转手递来要多写一万的收入证明",
+      "character_goal": "员工要今天拿到更高收入证明，发哥要守住签字真实性",
+      "conflict_mechanism": "一分彩礼的好消息被婚前买房和假收入证明连续反转",
+      "fage_payoff": "发哥递回收入证明并改批半天假让员工谈真实数字"
+    },
+    "feedback_context": {
+      "latest_feedback_ids": [
+        "feedback-20260901-workplace-r2-c1-rejected",
+        "feedback-20260901-workplace-r2-c2-rejected",
+        "feedback-20260901-workplace-r2-c3-rejected",
+        "feedback-20260901-broad-r5-c1-rejected",
+        "feedback-20260901-broad-r5-c2-rejected",
+        "feedback-20260901-broad-r5-c3-minor",
+        "feedback-20260901-broad-r5-selection-c3",
+        "feedback-20260901-broad-r5-c3-r2",
+        "feedback-20260901-broad-r5-c3-r2-prop-logic",
+        "feedback-20260901-broad-r5-c3-r2-jargon",
+        "feedback-20260901-broad-r5-c3-r3",
+        "feedback-20260902-broad-r5-c3-v2-direct"
+      ],
+      "keep": [
+        "第3个主题和事件方向还可以，小改后可以用",
+        "保留观众先以为发哥要签工资预支、结果签的是批假的反转方向",
+        "保留让员工陪父亲继续处理合同和付款问题的具体行动",
+        "V2这一版暂且纳入可拍"
+      ],
+      "avoid": [
+        "毫无意思、没有新意、没有热度、太过于泛泛的一般日常",
+        "主题选择有问题，热度优先级不足，当前方向不采用",
+        "选题后直接凭空写文案；应先参考相关二次创作并标注采用链接或作品",
+        "前一句明确点名工资预支单，后一句把同一道具当请假单，造成前后逻辑矛盾",
+        "第三方等需要观众停顿解释、却不承担剧情作用的偏术语用词"
+      ],
+      "publication_data": "无用户提供的发布数据",
+      "read_at": "2026-09-02T15:14:21+08:00"
+    },
+    "research_scope": {
+      "mode": "broad_pool",
+      "focus_label": "无",
+      "basis": "跨职场、婚产、隐私、消费、家庭等九个公开议题统一按热度45%排序"
+    }
+  },
+  "topic_strategy": {
+    "topic_mode": "current_issue",
+    "macro_theme": "marriage_and_property",
+    "public_question": "一分彩礼不要但要求婚前买房时，能不能让单位多开收入证明先过关？",
+    "opposing_positions": [
+      "婚前买房是双方选择，收入证明临时多写一点可解燃眉之急",
+      "假收入会把婚姻压力转成签字人的责任，不能代签"
+    ],
+    "stake_evidence": [
+      {
+        "tag": "身份体面",
+        "public_proof": "一分彩礼没出"
+      },
+      {
+        "tag": "公平责任",
+        "public_proof": "收入证明多写一万"
+      }
+    ],
+    "novelty_break": {
+      "expected_pattern": "老板被员工婚事打动，顺手签下更高收入证明",
+      "story_break": "发哥说我批半天假，证明退回，只给谈清楚的时间"
+    },
+    "escalation_event": "员工一分彩礼没出，却要求收入证明多写一万",
+    "heat_basis": {
+      "status": "dated_source",
+      "source_ref": "https://www.news.cn/politics/20260826/b8a29e5e714048d38dfae9c7e096f0e0/c.html",
+      "claim": "2026-08-26公开报道与相关作品共同支持本轮研究"
+    },
+    "selection_ranking": {
+      "pool_id": "batch-20260902-craft-v3-01-topic-pool",
+      "pool_size": 9,
+      "eligible_count": 8,
+      "heat_rank": 2,
+      "final_rank": 1,
+      "heat_evidence": {
+        "freshness_days": 7,
+        "evidence_tier": "multiple_dated_reports",
+        "hotlist_minutes": 0,
+        "distinct_domains": 3,
+        "derivative_work_count": 2
+      },
+      "heat_score": 73,
+      "audience_conflict_score": 92,
+      "fage_fit_score": 82,
+      "shootability_score": 85,
+      "selection_score": 80.4,
+      "evidence_refs": [
+        "https://www.news.cn/politics/20260826/b8a29e5e714048d38dfae9c7e096f0e0/c.html",
+        "https://tv.cctv.com/2026/03/29/VIDEd8o3TjbwCR2Vw40DPZt2260329.shtml"
+      ],
+      "decision_note": "先按公开时效与传播证据计热度，再叠加公共冲突、发哥行动适配和低成本可拍性"
+    }
+  },
+  "workflow": {
+    "stage": "candidate",
+    "revision_id": "r1",
+    "selected_candidate_id": "",
+    "copy_confirmation": {
+      "confirmed": false,
+      "confirmed_revision_id": "",
+      "confirmed_at": "",
+      "user_quote": "",
+      "content_sha256": ""
+    }
+  },
+  "meta": {
+    "account_name": "发哥",
+    "generation_date": "2026-09-02",
+    "platform": "抖音自然流量",
+    "estimated_duration": "约35-50秒",
+    "scene": "公司办公室",
+    "format": "员工画外音对话轻剧情",
+    "generation_mode": "new_script",
+    "topic_id": "zero-bride-price-income-proof",
+    "filename_topic": "零彩礼，假工资？",
+    "version": "r1"
+  },
+  "title": "零彩礼，假工资？",
+  "cover_title": "一分彩礼没出，却要多写一万工资",
+  "content_positioning": "婚姻与财产中的异常选择轻剧情",
+  "core_viewpoint": "零彩礼不等于可以用假收入过关；婚前数字谈不拢，就先谈清而不是让老板签假证明",
+  "content_signature": {
+    "category": "婚姻与财产",
+    "premise": "员工一分彩礼没出，却让发哥把收入证明多写一万以便婚前买房",
+    "conflict": "员工急着完成婚前买房条件，发哥拒绝替虚假收入承担签字责任",
+    "hook_mechanism": "具体异常结果",
+    "plot_device": "一分彩礼的好消息被婚前买房和假收入证明连续反转",
+    "ending_type": "老板承担动作成本",
+    "key_line": "我批半天假，证明退回。"
+  },
+  "creative_diagnostics": {
+    "format_fit": "员工说一分彩礼没出，转手递来要多写一万的收入证明可在办公室用一张表和一次动作拍完",
+    "audience_resonance": "一分彩礼不要但要求婚前买房时，能不能让单位多开收入证明先过关？",
+    "content_value": "零彩礼不等于可以用假收入过关；婚前数字谈不拢，就先谈清而不是让老板签假证明",
+    "cognitive_gap": "发哥说我批半天假，证明退回，只给谈清楚的时间",
+    "hook_topic": "员工说一分彩礼没出，转手递来要多写一万的收入证明",
+    "hook_gap": "观众会追问发哥最终签什么、删什么或承担什么",
+    "hook_credibility": "员工把收入证明推到发哥面前，金额栏贴着一张加一万的便签",
+    "hook_payoff": "发哥递回收入证明并改批半天假让员工谈真实数字"
+  },
+  "story_blueprint": {
+    "one_sentence_story": "员工一分彩礼没出，却让发哥把收入证明多写一万以便婚前买房，最后发哥递回收入证明并改批半天假让员工谈真实数字",
+    "structure_mode": "three_part",
+    "narrative_pattern": "counter_reversal",
+    "fage_want": "发哥要守住签字真实性",
+    "counterparty_want": "员工要今天拿到更高收入证明",
+    "why_now": "员工说一分彩礼没出，转手递来要多写一万的收入证明",
+    "primary_comedy_engine": "一分彩礼的好消息被婚前买房和假收入证明连续反转",
+    "core_choice": "发哥递回收入证明并改批半天假让员工谈真实数字",
+    "choice_cost": "假收入证明没有签，员工得到半天时间重新谈婚前买房",
+    "core_meaning": "零彩礼不等于可以用假收入过关；婚前数字谈不拢，就先谈清而不是让老板签假证明",
+    "plain_conclusion": "我批半天假，证明退回。",
+    "ending_change": "假收入证明没有签，员工得到半天时间重新谈婚前买房",
+    "extra_beat_reason": "无",
+    "expected_effect": "无"
+  },
+  "dialogue_design": {
+    "mode": "deadpan_setback",
+    "anchor_word": "一万",
+    "payoff_method": "零彩礼的轻松开场被假收入证明反打，停顿后只批时间不签假数字",
+    "jargon_resolution": "公开对白不使用偏术语，所有冲突落到表格、数字、日期和具体动作"
+  },
+  "persona_evidence": {
+    "behavior_id": "B04",
+    "expression_id": "E03",
+    "tradeoff_id": "V02",
+    "weakness_id": "W01",
+    "relationship_id": "R03",
+    "visible_action": "发哥递回收入证明并改批半天假让员工谈真实数字",
+    "action_consequence": "假收入证明没有签，员工得到半天时间重新谈婚前买房"
+  },
+  "primary_hook": {
+    "voiceover": "发哥，我一分彩礼没出，收入证明多写一万行不行？",
+    "visual": "员工把收入证明推到发哥面前，金额栏贴着一张加一万的便签",
+    "screen_text": "一分彩礼没出，却要多写一万工资"
+  },
+  "cast": [
+    {
+      "role": "发哥",
+      "visibility": "露脸",
+      "purpose": "被具体证据架住后作决定并承担成本"
+    },
+    {
+      "role": "员工画外音",
+      "visibility": "不露脸",
+      "purpose": "带着自己的明确目标交涉"
+    }
+  ],
+  "preparation": [
+    {
+      "category": "道具",
+      "items": "员工把收入证明推到发哥面前，金额栏贴着一张加一万的便签",
+      "notes": "只用纸质表、红笔或电脑屏幕完成"
+    }
+  ],
+  "segments": [
+    {
+      "time": "0-10秒",
+      "stage": "hook",
+      "speaker": "员工画外音、发哥",
+      "dialogue": "员工画外音：发哥，我一分彩礼没出，收入证明多写一万行不行？发哥：先把这两件事分开。",
+      "visual_action": "员工把收入证明推到发哥面前，金额栏贴着一张加一万的便签",
+      "story_change": "零彩礼与多写一万收入同时出现",
+      "humor_function": "用短停顿和关系错位推进，不另加段子",
+      "camera": "固定中景接道具特写",
+      "screen_audio": "一分彩礼没出，却要多写一万工资"
+    },
+    {
+      "time": "10-20秒",
+      "stage": "conflict",
+      "speaker": "员工画外音、发哥",
+      "dialogue": "员工画外音：对方不要彩礼，要我婚前买房，银行说收入不够。发哥：所以你来借我的字？员工画外音：就多一万，房贷还是我自己还。发哥：……假的一万，也得我签。员工画外音：那房买不了，婚还怎么结？",
+      "visual_action": "发哥放下笔，员工指出婚前买房条件",
+      "story_change": "婚前买房压力转成要求发哥签假数字",
+      "humor_function": "用短停顿和关系错位推进，不另加段子",
+      "camera": "固定中景接道具特写",
+      "screen_audio": "保留现场短停顿"
+    },
+    {
+      "time": "20-30秒",
+      "stage": "ending",
+      "speaker": "发哥、员工画外音",
+      "dialogue": "发哥：先把真实数字说清。员工画外音：今天就要给答复，我没时间谈了。发哥：我批半天假，证明退回。",
+      "visual_action": "发哥递回收入证明并改批半天假",
+      "story_change": "发哥递回证明，只改批半天谈真实数字",
+      "humor_function": "用短停顿和关系错位推进，不另加段子",
+      "camera": "固定中景接道具特写",
+      "screen_audio": "保留现场短停顿"
+    }
+  ],
+  "full_dialogue": [
+    {
+      "speaker": "员工画外音",
+      "line": "发哥，我一分彩礼没出，收入证明多写一万行不行？"
+    },
+    {
+      "speaker": "发哥",
+      "line": "先把这两件事分开。"
+    },
+    {
+      "speaker": "员工画外音",
+      "line": "对方不要彩礼，要我婚前买房，银行说收入不够。"
+    },
+    {
+      "speaker": "发哥",
+      "line": "所以你来借我的字？"
+    },
+    {
+      "speaker": "员工画外音",
+      "line": "就多一万，房贷还是我自己还。"
+    },
+    {
+      "speaker": "发哥",
+      "line": "……假的一万，也得我签。"
+    },
+    {
+      "speaker": "员工画外音",
+      "line": "那房买不了，婚还怎么结？"
+    },
+    {
+      "speaker": "发哥",
+      "line": "先把真实数字说清。"
+    },
+    {
+      "speaker": "员工画外音",
+      "line": "今天就要给答复，我没时间谈了。"
+    },
+    {
+      "speaker": "发哥",
+      "line": "我批半天假，证明退回。"
+    }
+  ],
+  "comment_prompt": "你更在意哪一步？只评故事是否愿意拍。",
+  "shooting_notes": [
+    "按结构标注拍摄，不补宏大总结",
+    "发哥动作前保留半秒真实停顿"
+  ],
+  "research_summary": "先检索当前公共议题，再看相关短视频的开场、反转和道具用法；只借结构机制，不复制原句、口头禅或人物设定。",
+  "research_sources": [
+    {
+      "source_kind": "web",
+      "title": "持续推进农村高额彩礼综合整治",
+      "locator": "https://www.news.cn/politics/20260826/b8a29e5e714048d38dfae9c7e096f0e0/c.html",
+      "source_date": "2026-08-26",
+      "retrieved_at": "2026-09-02",
+      "metrics_provided": false,
+      "metric_note": "仅作公开热点或创作机制研究；无用户提供的发布数据",
+      "borrowed_mechanism": "记录当前议题与发生日期"
+    },
+    {
+      "source_kind": "web",
+      "title": "退还18.8万元彩礼的背后",
+      "locator": "https://tv.cctv.com/2026/03/29/VIDEd8o3TjbwCR2Vw40DPZt2260329.shtml",
+      "source_date": "未显示",
+      "retrieved_at": "2026-09-02",
+      "metrics_provided": false,
+      "metric_note": "仅作公开热点或创作机制研究；无用户提供的发布数据",
+      "borrowed_mechanism": "先给具体金额，再追问掌声背后的现实条件"
+    },
+    {
+      "source_kind": "local_history",
+      "title": "老板IP历史选题台账",
+      "locator": "老板IP内容库/选题台账.jsonl",
+      "source_date": "2026-09-02",
+      "retrieved_at": "2026-09-02",
+      "metrics_provided": false,
+      "metric_note": "仅作公开热点或创作机制研究；无用户提供的发布数据",
+      "borrowed_mechanism": "只读查重，不登记新状态"
+    }
+  ],
+  "creative_adaptation": {
+    "reviewed_works": [
+      {
+        "title": "退还18.8万元彩礼的背后",
+        "locator": "https://tv.cctv.com/2026/03/29/VIDEd8o3TjbwCR2Vw40DPZt2260329.shtml",
+        "decision": "adopted",
+        "observed_mechanism": "先给具体金额，再追问掌声背后的现实条件",
+        "adopted_mechanism": "采用具体金额先行、随后揭开第二层条件；不采用人物经历与原句",
+        "copyright_boundary": "仅借抽象叙事装置，未复制原台词、镜头顺序、人物关系或标志性表达"
+      }
+    ],
+    "adoption_disclosure": "采用《退还18.8万元彩礼的背后》的抽象机制：采用具体金额先行、随后揭开第二层条件；不采用人物经历与原句"
+  },
+  "continuity_claims": []
+}

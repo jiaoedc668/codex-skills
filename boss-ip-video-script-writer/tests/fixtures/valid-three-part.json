@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "account_name": "发哥",
+    "generation_date": "2026-08-31",
+    "platform": "抖音自然流量",
+    "estimated_duration": "约30-50秒",
+    "scene": "公司办公室",
+    "format": "员工画外音对话",
+    "generation_mode": "new_script",
+    "topic_id": "topic-validator-001",
+    "version": "auto"
+  },
+  "title": "三段式校验样本",
+  "cover_title": "AI能替你上班吗",
+  "content_positioning": "用轻松对话说明AI工具与人的判断",
+  "core_viewpoint": "AI可以帮助人提高效率，但最后的判断仍由人负责",
+  "content_signature": {
+    "category": "职场关系",
+    "premise": "员工以为AI能替自己上班",
+    "conflict": "员工想省掉工作，发哥强调人的判断",
+    "hook_mechanism": "直接提问",
+    "plot_device": "轻松接话",
+    "ending_type": "朴素结论",
+    "key_line": "把活干得更轻松，也是一种进步"
+  },
+  "creative_diagnostics": {
+    "format_fit": "一个具体问题和一轮追问能在30至50秒内说清",
+    "audience_resonance": "40+职场人正在面对AI工具带来的效率变化",
+    "content_value": "观众能分清工具省力和本人负责的边界",
+    "cognitive_gap": "不夸大AI替代人，只谈日常工作里的实际帮助",
+    "hook_topic": "AI能不能替人上班",
+    "hook_gap": "无，采用直接表达",
+    "hook_credibility": "通过办公室里员工与老板的真实问答建立可信度",
+    "hook_payoff": "发哥用整理资料和客户判断的区别回答开场问题"
+  },
+  "story_blueprint": {
+    "one_sentence_story": "员工问AI能否替自己上班，发哥用工作例子说明工具只能省力，最后给出正向判断",
+    "structure_mode": "three_part",
+    "fage_want": "把AI的实际作用说清楚",
+    "counterparty_want": "确认自己能不能少做工作",
+    "why_now": "员工刚用AI完成了一份方案",
+    "failed_first_plan": "未使用，三段式直接展开",
+    "new_trouble": "未使用，三段式直接展开",
+    "primary_comedy_engine": "员工把提高效率理解成不用上班",
+    "secondary_comedy_engine": "未使用",
+    "core_choice": "未使用，以具体判断收束",
+    "choice_cost": "未使用",
+    "core_meaning": "工具负责省力，人负责判断",
+    "plain_conclusion": "工具能帮人省力，最后的判断还得自己来。把活干得更轻松，也是一种进步。",
+    "ending_change": "员工从期待被替代转为理解怎样使用工具",
+    "extra_beat_reason": "无",
+    "expected_effect": "无"
+  },
+  "primary_hook": {
+    "voiceover": "发哥，AI都能写方案了，以后是不是不用上班了？",
+    "visual": "员工把AI生成的方案递到发哥面前",
+    "screen_text": "AI能替你上班吗"
+  },
+  "cast": [
+    {
+      "role": "发哥",
+      "visibility": "露脸",
+      "purpose": "用工作例子把观点说清楚"
+    },
+    {
+      "role": "员工画外音",
+      "visibility": "不露脸",
+      "purpose": "提出具体问题并接话"
+    }
+  ],
+  "preparation": [
+    {
+      "category": "道具",
+      "items": "一份打印方案",
+      "notes": "放在发哥桌前"
+    }
+  ],
+  "segments": [
+    {
+      "time": "0-5秒",
+      "stage": "hook",
+      "speaker": "员工画外音",
+      "dialogue": "员工画外音：发哥，AI都能写方案了，以后是不是不用上班了？",
+      "visual_action": "员工递出打印方案",
+      "story_change": "具体问题和员工的误解同时出现",
+      "humor_function": "把提高效率夸张成不用上班，建立轻松感",
+      "camera": "中景固定机位拍发哥接过方案",
+      "screen_audio": "屏幕大字：AI能替你上班吗"
+    },
+    {
+      "time": "5-30秒",
+      "stage": "dialogue",
+      "speaker": "发哥、员工画外音",
+      "dialogue": "发哥：先别高兴。AI能帮你把资料整理快一点，但客户为什么不点头，它不知道。员工画外音：那我学它还有什么用？发哥：同样上一天班，别人还在翻资料，你已经把时间腾出来解决真问题，这就是用处。",
+      "visual_action": "发哥翻开方案并指向其中一页",
+      "story_change": "员工从想少上班转为追问工具的实际用处",
+      "humor_function": "先用短答案压住期待，再用具体例子解释",
+      "camera": "中近景，跟随发哥手指轻推",
+      "screen_audio": "字幕突出：省时间，解决真问题"
+    },
+    {
+      "time": "30-45秒",
+      "stage": "ending",
+      "speaker": "发哥",
+      "dialogue": "发哥：工具能帮人省力，最后的判断还得自己来。把活干得更轻松，也是一种进步。",
+      "visual_action": "发哥把方案递回员工",
+      "story_change": "工具与人的责任边界被说清楚",
+      "humor_function": "无，承担朴素结论",
+      "camera": "中景固定机位自然收住",
+      "screen_audio": "字幕突出：省力，不省判断"
+    }
+  ],
+  "full_dialogue": [
+    {
+      "speaker": "员工画外音",
+      "line": "发哥，AI都能写方案了，以后是不是不用上班了？"
+    },
+    {
+      "speaker": "发哥",
+      "line": "先别高兴。AI能帮你把资料整理快一点，但客户为什么不点头，它不知道。"
+    },
+    {
+      "speaker": "员工画外音",
+      "line": "那我学它还有什么用？"
+    },
+    {
+      "speaker": "发哥",
+      "line": "同样上一天班，别人还在翻资料，你已经把时间腾出来解决真问题，这就是用处。"
+    },
+    {
+      "speaker": "发哥",
+      "line": "工具能帮人省力，最后的判断还得自己来。把活干得更轻松，也是一种进步。"
+    }
+  ],
+  "comment_prompt": "无",
+  "shooting_notes": [
+    "保持一问一答的自然停顿，不补充额外道理"
+  ],
+  "research_summary": "测试样本只验证三段式数据结构和质量检查逻辑",
+  "research_sources": [
+    {
+      "title": "校验器测试来源",
+      "creator": "测试夹具",
+      "platform": "本地测试",
+      "url": "https://example.com/validator-fixture",
+      "published_at": "未显示",
+      "retrieved_at": "2026-08-31",
+      "signal_basis": "仅用于本地结构校验，不作为真实研究来源",
+      "verified_level": "unverified",
+      "borrowed_mechanism": "三段式结构校验"
+    }
+  ],
+  "continuity_claims": []
+}

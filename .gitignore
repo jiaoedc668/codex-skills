@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*.tmp
+*.log
+.venv/
+dist/
+build/
+boss-ip-video-script-writer/output/

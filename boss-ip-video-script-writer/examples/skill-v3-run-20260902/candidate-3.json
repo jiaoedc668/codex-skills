@@ -1,0 +1,335 @@
+{
+  "schema_version": 3,
+  "candidate": {
+    "batch_id": "batch-20260902-craft-v3-01",
+    "candidate_id": "batch-20260902-craft-v3-01-c3",
+    "position": 3,
+    "selection_status": "awaiting_selection",
+    "difference_axes": {
+      "inciting_incident": "中秋福利表翻开，父母住址和家属电话两列都标着必填",
+      "character_goal": "员工要删掉家属信息必填，发哥要保留福利又减少无关收集",
+      "conflict_mechanism": "福利登记从本人地址一路升级到父母住址和家属电话",
+      "fage_payoff": "发哥拿起红笔划掉两列并让行政删除电子表必填"
+    },
+    "feedback_context": {
+      "latest_feedback_ids": [
+        "feedback-20260901-workplace-r2-c1-rejected",
+        "feedback-20260901-workplace-r2-c2-rejected",
+        "feedback-20260901-workplace-r2-c3-rejected",
+        "feedback-20260901-broad-r5-c1-rejected",
+        "feedback-20260901-broad-r5-c2-rejected",
+        "feedback-20260901-broad-r5-c3-minor",
+        "feedback-20260901-broad-r5-selection-c3",
+        "feedback-20260901-broad-r5-c3-r2",
+        "feedback-20260901-broad-r5-c3-r2-prop-logic",
+        "feedback-20260901-broad-r5-c3-r2-jargon",
+        "feedback-20260901-broad-r5-c3-r3",
+        "feedback-20260902-broad-r5-c3-v2-direct"
+      ],
+      "keep": [
+        "第3个主题和事件方向还可以，小改后可以用",
+        "保留观众先以为发哥要签工资预支、结果签的是批假的反转方向",
+        "保留让员工陪父亲继续处理合同和付款问题的具体行动",
+        "V2这一版暂且纳入可拍"
+      ],
+      "avoid": [
+        "毫无意思、没有新意、没有热度、太过于泛泛的一般日常",
+        "主题选择有问题，热度优先级不足，当前方向不采用",
+        "选题后直接凭空写文案；应先参考相关二次创作并标注采用链接或作品",
+        "前一句明确点名工资预支单，后一句把同一道具当请假单，造成前后逻辑矛盾",
+        "第三方等需要观众停顿解释、却不承担剧情作用的偏术语用词"
+      ],
+      "publication_data": "无用户提供的发布数据",
+      "read_at": "2026-09-02T15:14:21+08:00"
+    },
+    "research_scope": {
+      "mode": "broad_pool",
+      "focus_label": "无",
+      "basis": "跨职场、婚产、隐私、消费、家庭等九个公开议题统一按热度45%排序"
+    }
+  },
+  "topic_strategy": {
+    "topic_mode": "current_issue",
+    "macro_theme": "privacy_and_platforms",
+    "public_question": "公司发中秋福利时，能不能把父母住址和家属电话设成必填？",
+    "opposing_positions": [
+      "直接寄到家更贴心，可以统一收家属地址电话",
+      "福利发本人即可，不该强收家属信息"
+    ],
+    "stake_evidence": [
+      {
+        "tag": "隐私边界",
+        "public_proof": "父母住址"
+      },
+      {
+        "tag": "信任破裂",
+        "public_proof": "家里人的电话"
+      }
+    ],
+    "novelty_break": {
+      "expected_pattern": "老板强调公司好意，劝员工配合把家属信息填完整",
+      "story_break": "发哥说把这两列删了，月饼发员工，愿意就自己带回家"
+    },
+    "escalation_event": "中秋福利表把父母住址和家属电话都设成必填",
+    "heat_basis": {
+      "status": "dated_source",
+      "source_ref": "https://theory.people.com.cn/n1/2026/0816/c40531-40780401.html",
+      "claim": "2026-08-16公开报道与相关作品共同支持本轮研究"
+    },
+    "selection_ranking": {
+      "pool_id": "batch-20260902-craft-v3-01-topic-pool",
+      "pool_size": 9,
+      "eligible_count": 8,
+      "heat_rank": 5,
+      "final_rank": 4,
+      "heat_evidence": {
+        "freshness_days": 17,
+        "evidence_tier": "multiple_dated_reports",
+        "hotlist_minutes": 0,
+        "distinct_domains": 2,
+        "derivative_work_count": 1
+      },
+      "heat_score": 51,
+      "audience_conflict_score": 90,
+      "fage_fit_score": 94,
+      "shootability_score": 97,
+      "selection_score": 74.3,
+      "evidence_refs": [
+        "https://theory.people.com.cn/n1/2026/0816/c40531-40780401.html",
+        "https://www.douyin.com/video/7555078040120806707"
+      ],
+      "decision_note": "先按公开时效与传播证据计热度，再叠加公共冲突、发哥行动适配和低成本可拍性"
+    }
+  },
+  "workflow": {
+    "stage": "candidate",
+    "revision_id": "r1",
+    "selected_candidate_id": "",
+    "copy_confirmation": {
+      "confirmed": false,
+      "confirmed_revision_id": "",
+      "confirmed_at": "",
+      "user_quote": "",
+      "content_sha256": ""
+    }
+  },
+  "meta": {
+    "account_name": "发哥",
+    "generation_date": "2026-09-02",
+    "platform": "抖音自然流量",
+    "estimated_duration": "约35-50秒",
+    "scene": "公司办公室",
+    "format": "员工画外音对话轻剧情",
+    "generation_mode": "new_script",
+    "topic_id": "mooncake-family-privacy",
+    "filename_topic": "月饼表，填父母电话？",
+    "version": "r1"
+  },
+  "title": "月饼表，填父母电话？",
+  "cover_title": "发个月饼，要填父母电话？",
+  "content_positioning": "隐私与职场中的异常选择轻剧情",
+  "core_viewpoint": "福利可以发给员工自己带回家，不能借贴心把父母住址和电话变成必填",
+  "content_signature": {
+    "category": "隐私与职场",
+    "premise": "中秋福利登记表翻开后露出父母住址和家属电话必填，员工当场拒填",
+    "conflict": "行政想把月饼直接寄到家显得贴心，员工不愿交家里人的电话",
+    "hook_mechanism": "具体异常结果",
+    "plot_device": "福利登记从本人地址一路升级到父母住址和家属电话",
+    "ending_type": "老板承担动作成本",
+    "key_line": "月饼发员工，愿意就自己带回家。"
+  },
+  "creative_diagnostics": {
+    "format_fit": "中秋福利表翻开，父母住址和家属电话两列都标着必填可在办公室用一张表和一次动作拍完",
+    "audience_resonance": "公司发中秋福利时，能不能把父母住址和家属电话设成必填？",
+    "content_value": "福利可以发给员工自己带回家，不能借贴心把父母住址和电话变成必填",
+    "cognitive_gap": "发哥说把这两列删了，月饼发员工，愿意就自己带回家",
+    "hook_topic": "中秋福利表翻开，父母住址和家属电话两列都标着必填",
+    "hook_gap": "观众会追问发哥最终签什么、删什么或承担什么",
+    "hook_credibility": "镜头先拍中秋福利登记标题，翻开后露出父母住址和家属电话必填两列",
+    "hook_payoff": "发哥拿起红笔划掉两列并让行政删除电子表必填"
+  },
+  "story_blueprint": {
+    "one_sentence_story": "中秋福利登记表翻开后露出父母住址和家属电话必填，员工当场拒填，最后发哥拿起红笔划掉两列并让行政删除电子表必填",
+    "structure_mode": "three_part",
+    "narrative_pattern": "rule_escalation",
+    "fage_want": "发哥要保留福利又减少无关收集",
+    "counterparty_want": "员工要删掉家属信息必填",
+    "why_now": "中秋福利表翻开，父母住址和家属电话两列都标着必填",
+    "primary_comedy_engine": "福利登记从本人地址一路升级到父母住址和家属电话",
+    "core_choice": "发哥拿起红笔划掉两列并让行政删除电子表必填",
+    "choice_cost": "月饼改为发给员工本人，父母住址和家属电话不再收集",
+    "core_meaning": "福利可以发给员工自己带回家，不能借贴心把父母住址和电话变成必填",
+    "plain_conclusion": "月饼发员工，愿意就自己带回家。",
+    "ending_change": "月饼改为发给员工本人，父母住址和家属电话不再收集",
+    "extra_beat_reason": "无",
+    "expected_effect": "无"
+  },
+  "dialogue_design": {
+    "mode": "prop_reveal",
+    "anchor_word": "必填",
+    "payoff_method": "先看见福利登记标题，再翻开露出父母住址和家属电话必填列",
+    "jargon_resolution": "公开对白不使用偏术语，所有冲突落到表格、数字、日期和具体动作"
+  },
+  "persona_evidence": {
+    "behavior_id": "B02",
+    "expression_id": "E01",
+    "tradeoff_id": "V03",
+    "weakness_id": "W02",
+    "relationship_id": "R01",
+    "visible_action": "发哥拿起红笔划掉两列并让行政删除电子表必填",
+    "action_consequence": "月饼改为发给员工本人，父母住址和家属电话不再收集"
+  },
+  "primary_hook": {
+    "voiceover": "发哥，中秋福利表为什么要填我父母住址和电话？",
+    "visual": "镜头先拍中秋福利登记标题，翻开后露出父母住址和家属电话必填两列",
+    "screen_text": "发个月饼，要填父母电话？"
+  },
+  "cast": [
+    {
+      "role": "发哥",
+      "visibility": "露脸",
+      "purpose": "被具体证据架住后作决定并承担成本"
+    },
+    {
+      "role": "员工画外音",
+      "visibility": "不露脸",
+      "purpose": "带着自己的明确目标交涉"
+    }
+  ],
+  "preparation": [
+    {
+      "category": "道具",
+      "items": "镜头先拍中秋福利登记标题，翻开后露出父母住址和家属电话必填两列",
+      "notes": "只用纸质表、红笔或电脑屏幕完成"
+    }
+  ],
+  "segments": [
+    {
+      "time": "0-10秒",
+      "stage": "hook",
+      "speaker": "员工画外音、发哥",
+      "dialogue": "员工画外音：发哥，中秋福利表为什么要填我父母住址和电话？发哥：发个月饼，要这么多？",
+      "visual_action": "镜头先拍中秋福利登记标题，翻开后露出父母住址和家属电话必填两列",
+      "story_change": "福利登记翻开后露出父母住址和家属电话必填",
+      "humor_function": "用短停顿和关系错位推进，不另加段子",
+      "camera": "固定中景接道具特写",
+      "screen_audio": "发个月饼，要填父母电话？"
+    },
+    {
+      "time": "10-20秒",
+      "stage": "conflict",
+      "speaker": "行政画外音、员工画外音、发哥",
+      "dialogue": "行政画外音：想直接寄到家，员工会觉得公司更贴心。员工画外音：我只填自己地址，不想交家里人的电话。发哥：那就填自己的。行政画外音：可表格标了必填，少一项就交不了。发哥：谁把必填加上的？行政画外音：我照去年的表改的。",
+      "visual_action": "发哥翻开表格逐项看必填栏",
+      "story_change": "贴心寄送逐步升级为系统强制收集",
+      "humor_function": "用短停顿和关系错位推进，不另加段子",
+      "camera": "固定中景接道具特写",
+      "screen_audio": "保留现场短停顿"
+    },
+    {
+      "time": "20-30秒",
+      "stage": "ending",
+      "speaker": "发哥",
+      "dialogue": "发哥：把这两列删了。发哥：月饼发员工，愿意就自己带回家。",
+      "visual_action": "发哥拿起红笔划掉两列并让行政删除电子表必填",
+      "story_change": "发哥划掉两列并删除电子表必填",
+      "humor_function": "用短停顿和关系错位推进，不另加段子",
+      "camera": "固定中景接道具特写",
+      "screen_audio": "保留现场短停顿"
+    }
+  ],
+  "full_dialogue": [
+    {
+      "speaker": "员工画外音",
+      "line": "发哥，中秋福利表为什么要填我父母住址和电话？"
+    },
+    {
+      "speaker": "发哥",
+      "line": "发个月饼，要这么多？"
+    },
+    {
+      "speaker": "行政画外音",
+      "line": "想直接寄到家，员工会觉得公司更贴心。"
+    },
+    {
+      "speaker": "员工画外音",
+      "line": "我只填自己地址，不想交家里人的电话。"
+    },
+    {
+      "speaker": "发哥",
+      "line": "那就填自己的。"
+    },
+    {
+      "speaker": "行政画外音",
+      "line": "可表格标了必填，少一项就交不了。"
+    },
+    {
+      "speaker": "发哥",
+      "line": "谁把必填加上的？"
+    },
+    {
+      "speaker": "行政画外音",
+      "line": "我照去年的表改的。"
+    },
+    {
+      "speaker": "发哥",
+      "line": "把这两列删了。"
+    },
+    {
+      "speaker": "发哥",
+      "line": "月饼发员工，愿意就自己带回家。"
+    }
+  ],
+  "comment_prompt": "你更在意哪一步？只评故事是否愿意拍。",
+  "shooting_notes": [
+    "按结构标注拍摄，不补宏大总结",
+    "发哥动作前保留半秒真实停顿"
+  ],
+  "research_summary": "先检索当前公共议题，再看相关短视频的开场、反转和道具用法；只借结构机制，不复制原句、口头禅或人物设定。",
+  "research_sources": [
+    {
+      "source_kind": "web",
+      "title": "2026青年关注的十大话题：隐私保护与数字安全感",
+      "locator": "https://theory.people.com.cn/n1/2026/0816/c40531-40780401.html",
+      "source_date": "2026-08-16",
+      "retrieved_at": "2026-09-02",
+      "metrics_provided": false,
+      "metric_note": "仅作公开热点或创作机制研究；无用户提供的发布数据",
+      "borrowed_mechanism": "记录当前议题与发生日期"
+    },
+    {
+      "source_kind": "web",
+      "title": "公司强制员工打开朋友圈的后果有多严重",
+      "locator": "https://www.douyin.com/video/7555078040120806707",
+      "source_date": "未显示",
+      "retrieved_at": "2026-09-02",
+      "metrics_provided": false,
+      "metric_note": "仅作公开热点或创作机制研究；无用户提供的发布数据",
+      "borrowed_mechanism": "从看似普通的公司要求逐步露出个人边界冲突"
+    },
+    {
+      "source_kind": "local_history",
+      "title": "老板IP历史选题台账",
+      "locator": "老板IP内容库/选题台账.jsonl",
+      "source_date": "2026-09-02",
+      "retrieved_at": "2026-09-02",
+      "metrics_provided": false,
+      "metric_note": "仅作公开热点或创作机制研究；无用户提供的发布数据",
+      "borrowed_mechanism": "只读查重，不登记新状态"
+    }
+  ],
+  "creative_adaptation": {
+    "reviewed_works": [
+      {
+        "title": "公司强制员工打开朋友圈的后果有多严重",
+        "locator": "https://www.douyin.com/video/7555078040120806707",
+        "decision": "adopted",
+        "observed_mechanism": "从看似普通的公司要求逐步露出个人边界冲突",
+        "adopted_mechanism": "采用普通要求逐层露出隐私代价的升级方式；不采用原情节和台词",
+        "copyright_boundary": "仅借抽象叙事装置，未复制原台词、镜头顺序、人物关系或标志性表达"
+      }
+    ],
+    "adoption_disclosure": "采用《公司强制员工打开朋友圈的后果有多严重》的抽象机制：采用普通要求逐层露出隐私代价的升级方式；不采用原情节和台词"
+  },
+  "continuity_claims": []
+}

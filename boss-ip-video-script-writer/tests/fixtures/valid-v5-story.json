@@ -1,0 +1,269 @@
+{
+  "schema_version": 5,
+  "candidate": {
+    "batch_id": "batch-20260904-story-01",
+    "candidate_id": "batch-20260904-story-01-c1",
+    "position": 1,
+    "revision_id": "r1",
+    "evaluation_status": "awaiting_user_evaluation"
+  },
+  "duration_mode": "light_story_60",
+  "research_evidence": {
+    "topic_kind": "current_issue",
+    "fact_sources": [
+      {
+        "title": "测试来源 fact-3",
+        "url": "https://example.com/fact-3",
+        "source_date": "2026-09-02",
+        "retrieved_at": "2026-09-04",
+        "supports": "支持当前议题中可核验的具体事实",
+        "limits": "测试夹具不代表生产研究或真实热度"
+      }
+    ],
+    "heat_signals": [
+      {
+        "title": "测试来源 heat-3",
+        "url": "https://example.com/heat-3",
+        "source_date": "2026-09-03",
+        "retrieved_at": "2026-09-04",
+        "supports": "支持当前议题中可核验的具体事实",
+        "limits": "测试夹具不代表生产研究或真实热度"
+      }
+    ]
+  },
+  "topic_decision": {
+    "pool_id": "pool-20260904-direct-01",
+    "topic_id": "topic-3",
+    "priority_category": "midlife_work_business",
+    "concrete_event": "朋友瞒着家人去做夜班分拣",
+    "concrete_anchor": "试岗一晚能拿三百元",
+    "audience_stake": "四十岁失业者在收入和体面之间必须立刻选择",
+    "strongest_counterargument": "暂时隐瞒能避免家人焦虑和无谓争执",
+    "fage_choice": "先去试岗，但当天把收入和风险告诉家人",
+    "fage_cost": "发哥陪朋友跑一趟并承担劝错的关系压力",
+    "ending_consequence": "朋友发出消息后走进试岗仓库",
+    "audience_response_space": "观众可以争论失业后该不该向家人坦白"
+  },
+  "conflict_blueprint": {
+    "immediate_wants": [
+      {
+        "party": "朋友",
+        "want": "先瞒着家人完成一晚夜班试岗",
+        "line_ids": [
+          "L1",
+          "L3"
+        ]
+      },
+      {
+        "party": "发哥",
+        "want": "让朋友先查清风险并当天把事实告诉家人",
+        "line_ids": [
+          "L2",
+          "L4",
+          "L8"
+        ]
+      }
+    ],
+    "strongest_counterargument": {
+      "speaker": "朋友",
+      "argument": "暂时隐瞒能避免家人在结果确定前徒增焦虑",
+      "survives_after_judgment": true,
+      "line_ids": [
+        "L3",
+        "L7",
+        "L9"
+      ]
+    },
+    "fage_judgment": {
+      "decision": "可以先试岗，但进门前要把收入和风险发给家人",
+      "rejected_option": "替朋友继续隐瞒夜班试岗",
+      "cost": "发哥陪朋友跑一趟并承担劝错的关系压力",
+      "line_ids": [
+        "L8",
+        "L10",
+        "L12"
+      ]
+    },
+    "turning_information": {
+      "new_information": "试岗协议写着夜班受伤只按临时劳务处理",
+      "before_action": "朋友准备不看协议直接进仓",
+      "after_action": "朋友先拍下协议并向家人说明风险",
+      "line_ids": [
+        "L4",
+        "L5",
+        "L6"
+      ]
+    }
+  },
+  "persona_continuity": {
+    "principle_id": "P01",
+    "principle_version": 1,
+    "use_mode": "follow",
+    "use_explanation": "先核实眼前风险，再让双方各自承担可说明的代价",
+    "continuity_refs": []
+  },
+  "script": {
+    "theme": "四十岁失业后，要不要先瞒着家人",
+    "secondary_theme": "无",
+    "lines": [
+      {
+        "line_id": "L1",
+        "speaker": "朋友",
+        "text": "发哥，我今晚去仓库试岗，先替我瞒着家里。",
+        "dialogue_act": "request"
+      },
+      {
+        "line_id": "L2",
+        "speaker": "发哥",
+        "text": "你连做什么都没说，我替你瞒什么？",
+        "dialogue_act": "refuse"
+      },
+      {
+        "line_id": "L3",
+        "speaker": "朋友",
+        "text": "夜班分拣，一晚三百，没做成就别让他们白担心。",
+        "dialogue_act": "push_back"
+      },
+      {
+        "line_id": "L4",
+        "speaker": "发哥",
+        "text": "可以试，协议先给我看。",
+        "dialogue_act": "request"
+      },
+      {
+        "line_id": "L5",
+        "speaker": "朋友",
+        "text": "这条字太小，应该没什么。",
+        "dialogue_act": "conceal"
+      },
+      {
+        "line_id": "L6",
+        "speaker": "发哥",
+        "text": "写着夜班受伤只按临时劳务处理。",
+        "dialogue_act": "push_back"
+      },
+      {
+        "line_id": "L7",
+        "speaker": "朋友",
+        "text": "那我不去了？可家里这个月还等着钱。",
+        "dialogue_act": "save_face"
+      },
+      {
+        "line_id": "L8",
+        "speaker": "发哥",
+        "text": "不替你退，也不替你瞒。先把收入和风险发回去。",
+        "dialogue_act": "decide"
+      },
+      {
+        "line_id": "L9",
+        "speaker": "朋友",
+        "text": "字打好了，我怕一发出去，他们觉得我混得太差。",
+        "dialogue_act": "save_face"
+      },
+      {
+        "line_id": "L10",
+        "speaker": "发哥",
+        "text": "让家里知道风险，不等于让他们替你丢脸。发。",
+        "dialogue_act": "decide"
+      },
+      {
+        "line_id": "L11",
+        "speaker": "朋友",
+        "text": "发了。他们让我注意安全，没拦我。",
+        "dialogue_act": "push_back"
+      },
+      {
+        "line_id": "L12",
+        "speaker": "发哥",
+        "text": "走吧，我陪你到门口，明早别硬撑着开车。",
+        "dialogue_act": "decide"
+      }
+    ],
+    "key_actions": [
+      {
+        "action_id": "A1",
+        "after_line_id": "L6",
+        "action": "发哥把试岗协议风险条款圈出来",
+        "consequence": "新证据把是否隐瞒改成是否知情承担风险"
+      },
+      {
+        "action_id": "A2",
+        "after_line_id": "L12",
+        "action": "朋友展示已发送消息，两人一起走到仓库门口",
+        "consequence": "朋友告知家人后仍去试岗，发哥承担陪同成本"
+      }
+    ],
+    "necessary_shots": [
+      "试岗协议风险条款特写",
+      "消息发送成功与仓库入口同框"
+    ],
+    "state_changes": [
+      {
+        "after_line_id": "L3",
+        "line_ids": [
+          "L1",
+          "L2",
+          "L3"
+        ],
+        "kind": "choice",
+        "before": "朋友要求发哥帮忙隐瞒",
+        "after": "发哥拒绝在未知风险下答应，朋友坚持收入的现实压力"
+      },
+      {
+        "after_line_id": "L6",
+        "line_ids": [
+          "L4",
+          "L5",
+          "L6"
+        ],
+        "kind": "fact",
+        "before": "一晚三百是唯一可见筹码",
+        "after": "双方查到夜班受伤责任条款"
+      },
+      {
+        "after_line_id": "L9",
+        "line_ids": [
+          "L7",
+          "L8",
+          "L9"
+        ],
+        "kind": "relationship",
+        "before": "朋友准备不知情地进仓",
+        "after": "朋友接受先告知家人，但仍担心失业损伤尊严"
+      },
+      {
+        "after_line_id": "L12",
+        "line_ids": [
+          "L10",
+          "L11",
+          "L12"
+        ],
+        "kind": "choice",
+        "before": "朋友仍未告诉家人",
+        "after": "朋友发出消息并在发哥陪同下进入试岗"
+      }
+    ],
+    "ending": {
+      "after_line_id": "L12",
+      "kind": "action",
+      "consequence": "朋友告知家人后走进试岗仓库，发哥陪到门口"
+    },
+    "mode_contract": {
+      "dilemma_count": 1,
+      "judgment_count": 1,
+      "turning_evidence_line_id": "L6",
+      "result_action_id": "A2"
+    }
+  },
+  "feedback_context": {
+    "latest_feedback_ids": [],
+    "keep": [
+      "无"
+    ],
+    "avoid": [
+      "无"
+    ],
+    "length_feedback": [],
+    "publication_data": "无用户提供的发布数据"
+  }
+}

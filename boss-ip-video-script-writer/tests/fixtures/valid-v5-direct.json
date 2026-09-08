@@ -1,0 +1,230 @@
+{
+  "schema_version": 5,
+  "candidate": {
+    "batch_id": "batch-20260904-direct-01",
+    "candidate_id": "batch-20260904-direct-01-c1",
+    "position": 1,
+    "revision_id": "r1",
+    "evaluation_status": "awaiting_user_evaluation"
+  },
+  "duration_mode": "direct_dialogue_30",
+  "research_evidence": {
+    "topic_kind": "current_issue",
+    "sources": [
+      {
+        "title": "测试用公开议题来源",
+        "url": "https://example.com/topic-1",
+        "source_date": "2026-09-03",
+        "retrieved_at": "2026-09-04",
+        "supports": "医院押金与家庭现金流形成现实两难",
+        "limits": "测试夹具不声称真实热度"
+      }
+    ],
+    "heat_signals": [
+      {
+        "title": "测试用互动证据",
+        "url": "https://example.com/heat-1",
+        "source_date": "2026-09-03",
+        "retrieved_at": "2026-09-04",
+        "supports": "该议题近期有人公开讨论",
+        "limits": "测试夹具不代表生产研究"
+      }
+    ]
+  },
+  "topic_decision": {
+    "pool_id": "pool-20260904-direct-01",
+    "topic_id": "topic-1",
+    "priority_category": "money_housing_pension_family",
+    "concrete_event": "员工当晚要补齐父亲住院押金",
+    "concrete_anchor": "押金还差两万元",
+    "audience_stake": "中年家庭同时面对医疗支出和房贷现金流",
+    "strongest_counterargument": "公司不能凭口头困难替员工家庭兜底",
+    "fage_choice": "公司预支一万，发哥个人借一万并写借条",
+    "fage_cost": "发哥承担一万元个人借款风险",
+    "ending_consequence": "员工当天保住床位并承担还款责任",
+    "audience_response_space": "观众可以争论老板该帮到哪一步"
+  },
+  "conflict_blueprint": {
+    "immediate_wants": [
+      {
+        "party": "员工",
+        "want": "今晚凑齐住院押金",
+        "line_ids": [
+          "L1",
+          "L3"
+        ]
+      },
+      {
+        "party": "发哥",
+        "want": "救急但不让公司替家庭兜底",
+        "line_ids": [
+          "L2",
+          "L8"
+        ]
+      }
+    ],
+    "strongest_counterargument": {
+      "speaker": "员工",
+      "argument": "预支工资会让下个月现金流更紧",
+      "survives_after_judgment": true,
+      "line_ids": [
+        "L3",
+        "L7"
+      ]
+    },
+    "fage_judgment": {
+      "decision": "公司预支一万，发哥个人借一万并写借条",
+      "rejected_option": "公司无条件承担全部两万元",
+      "cost": "发哥承担个人借款风险",
+      "line_ids": [
+        "L6",
+        "L8"
+      ]
+    },
+    "turning_information": {
+      "new_information": "员工已经挪用一万元房贷钱",
+      "before_action": "员工请求公司借出全部两万元",
+      "after_action": "双方把救急款拆成工资预支和个人借款",
+      "line_ids": [
+        "L4",
+        "L5",
+        "L6"
+      ]
+    }
+  },
+  "persona_continuity": {
+    "principle_id": "P01",
+    "principle_version": 1,
+    "use_mode": "follow",
+    "use_explanation": "先核实眼前风险，再让双方各自承担可说明的代价",
+    "continuity_refs": []
+  },
+  "script": {
+    "theme": "员工家里急用钱，公司该帮到哪一步",
+    "secondary_theme": "无",
+    "lines": [
+      {
+        "line_id": "L1",
+        "speaker": "员工",
+        "text": "发哥，我爸住院押金还差两万，公司能不能先借我？",
+        "dialogue_act": "request"
+      },
+      {
+        "line_id": "L2",
+        "speaker": "发哥",
+        "text": "公司不能替你家做决定，这两万也不能只凭一句着急批出去。",
+        "dialogue_act": "refuse"
+      },
+      {
+        "line_id": "L3",
+        "speaker": "员工",
+        "text": "可我今晚不交，床位就保不住；我不是来占便宜。",
+        "dialogue_act": "push_back"
+      },
+      {
+        "line_id": "L4",
+        "speaker": "发哥",
+        "text": "把医院缴费单和你家能承担的数给我看。",
+        "dialogue_act": "request"
+      },
+      {
+        "line_id": "L5",
+        "speaker": "员工",
+        "text": "单子是真的，但我没告诉家里，我把房贷钱先垫了一万。",
+        "dialogue_act": "conceal"
+      },
+      {
+        "line_id": "L6",
+        "speaker": "发哥",
+        "text": "那先别碰下月房贷，公司预支一万，我个人再借你一万。",
+        "dialogue_act": "decide"
+      },
+      {
+        "line_id": "L7",
+        "speaker": "员工",
+        "text": "预支以后我下个月更紧，这个窟窿还是我的。",
+        "dialogue_act": "push_back"
+      },
+      {
+        "line_id": "L8",
+        "speaker": "发哥",
+        "text": "所以两笔都写清楚；你今天保床位，下周把还款安排给我。",
+        "dialogue_act": "decide"
+      }
+    ],
+    "key_actions": [
+      {
+        "action_id": "A1",
+        "after_line_id": "L4",
+        "action": "员工把医院缴费单推到发哥面前",
+        "consequence": "口头求助变成可核实的眼前急事"
+      },
+      {
+        "action_id": "A2",
+        "after_line_id": "L8",
+        "action": "发哥把工资预支单和个人借条分开放好",
+        "consequence": "员工当天能交押金，同时留下还款责任"
+      }
+    ],
+    "necessary_shots": [
+      "医院缴费单金额特写",
+      "工资预支单与个人借条分开入镜"
+    ],
+    "state_changes": [
+      {
+        "after_line_id": "L2",
+        "line_ids": [
+          "L1",
+          "L2"
+        ],
+        "kind": "choice",
+        "before": "员工等公司直接借出两万元",
+        "after": "发哥拒绝只凭口头批钱"
+      },
+      {
+        "after_line_id": "L5",
+        "line_ids": [
+          "L3",
+          "L4",
+          "L5"
+        ],
+        "kind": "fact",
+        "before": "发哥只知道押金短缺",
+        "after": "双方知道员工已经动用房贷钱"
+      },
+      {
+        "after_line_id": "L8",
+        "line_ids": [
+          "L6",
+          "L7",
+          "L8"
+        ],
+        "kind": "choice",
+        "before": "员工担心工资预支把困难推到下月",
+        "after": "救急款被拆分并写清两种责任"
+      }
+    ],
+    "ending": {
+      "after_line_id": "L8",
+      "kind": "action",
+      "consequence": "员工当天保住床位并约定下周交还款安排"
+    },
+    "mode_contract": {
+      "dilemma_count": 1,
+      "judgment_count": 1,
+      "turning_evidence_line_id": "L5",
+      "result_action_id": "A2"
+    }
+  },
+  "feedback_context": {
+    "latest_feedback_ids": [],
+    "keep": [
+      "无"
+    ],
+    "avoid": [
+      "无"
+    ],
+    "length_feedback": [],
+    "publication_data": "无用户提供的发布数据"
+  }
+}
