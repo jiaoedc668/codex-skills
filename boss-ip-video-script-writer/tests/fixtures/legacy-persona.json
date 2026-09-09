@@ -1,31 +1,19 @@
 {
-  "schema_version": 3,
-  "updated_at": "2026-09-03T00:00:00+08:00",
+  "schema_version": 2,
+  "fixture_notice": "仅供历史v2/v3/v4自动测试；不是业务人物实例，也不是新稿授权",
   "identity": {
     "display_name": "发哥",
-    "age_band": "40+",
-    "role": "东来乐集团合伙人",
-    "public_role_usage": "只作创作坐标，前期脚本弱化公司和商业信息",
-    "audience": "40+泛人群",
     "fiction_status": "授权虚构人设"
   },
   "production_frame": {
-    "platform": "抖音自然流量",
     "locations": [
-      "公司",
       "办公室",
-      "展厅",
       "家中公共空间",
-      "朋友聚会场景",
-      "日常公共空间"
+      "朋友聚会场景"
     ],
-    "default_format": "根据主题选择发哥与员工、朋友或亲戚对话；对手角色可露脸或画外音，镜头仍以发哥的选择和后果为主",
-    "scene_selection": "先选最能承载公共冲突的低成本场景，不为维持老板身份强塞办公室",
-    "relationship_boundary": "朋友或亲戚可作为单条授权虚构关系，不自动成为发哥真实履历或后续连续事实",
-    "duration": "约30至50秒",
-    "brand_exposure": "前期弱化",
-    "commerce_stage": "暂不写商品、直播或千川转化"
+    "default_format": "测试朋友、亲戚与画外音关系"
   },
+  "approved_continuity_claims": [],
   "authorized_fictional_behaviors": [
     {
       "id": "B01",
@@ -75,66 +63,6 @@
       "avoid": "从头到尾像老师完整授课"
     }
   ],
-  "viewpoint_principles": [
-    {
-      "id": "P01",
-      "status": "active",
-      "active_version": 1,
-      "versions": [
-        {
-          "version": 1,
-          "tension": "制度与人情",
-          "default_choice": "先守住基本规则，再为真实困难做一次可说明的调整",
-          "rejected_choice": "要么一刀切拒绝，要么由公司替个人承担全部家庭责任",
-          "exceptions": [
-            "眼前存在可核实的人身安全风险时，允许先救急再补齐说明"
-          ],
-          "cost": "发哥或公司承担一点眼前麻烦，不能只让员工感恩",
-          "source_candidate_id": "baseline-persona",
-          "reason": "由 schema 2 的 V01 原样迁移"
-        }
-      ]
-    },
-    {
-      "id": "P02",
-      "status": "active",
-      "active_version": 1,
-      "versions": [
-        {
-          "version": 1,
-          "tension": "效率与责任",
-          "default_choice": "允许工具省力，但责任仍落到作决定的人",
-          "rejected_choice": "把工具生成的结果当成无需复核的最终决定",
-          "exceptions": [
-            "责任边界尚未说清时先暂停使用工具"
-          ],
-          "cost": "发哥也要为自己批准的安排负责",
-          "source_candidate_id": "baseline-persona",
-          "reason": "由 schema 2 的 V02 原样迁移"
-        }
-      ]
-    },
-    {
-      "id": "P03",
-      "status": "active",
-      "active_version": 1,
-      "versions": [
-        {
-          "version": 1,
-          "tension": "面子与认错",
-          "default_choice": "证据摆在眼前时认账并改动作",
-          "rejected_choice": "为了维持面子否认证据或让别人替自己背责",
-          "exceptions": [
-            "证据尚未核实时先查清事实，不抢认不存在的责任"
-          ],
-          "cost": "允许发哥短暂吃瘪，不靠金句挽尊",
-          "source_candidate_id": "baseline-persona",
-          "reason": "由 schema 2 的 V03 原样迁移"
-        }
-      ]
-    }
-  ],
-  "fictional_continuity": [],
   "visible_weaknesses": [
     {
       "id": "W01",
@@ -196,40 +124,24 @@
     "可核验的家庭经历",
     "未经确认的公司制度、经营数据或员工处分"
   ],
-  "legacy_v2": {
-    "value_tradeoffs": [
-      {
-        "id": "V01",
-        "tension": "制度与人情",
-        "default_choice": "先守住基本规则，再为真实困难做一次可说明的调整",
-        "cost": "发哥或公司承担一点眼前麻烦，不能只让员工感恩"
-      },
-      {
-        "id": "V02",
-        "tension": "效率与责任",
-        "default_choice": "允许工具省力，但责任仍落到作决定的人",
-        "cost": "发哥也要为自己批准的安排负责"
-      },
-      {
-        "id": "V03",
-        "tension": "面子与认错",
-        "default_choice": "证据摆在眼前时认账并改动作",
-        "cost": "允许发哥短暂吃瘪，不靠金句挽尊"
-      }
-    ],
-    "approved_continuity_claims": []
-  },
-  "feedback_learning": {
-    "allowed_signals": [
-      "用户明确候选选择",
-      "用户明确给出的直接可拍、小改、大改、否决",
-      "用户原话与原因码",
-      "用户提供且带来源和日期的发布数据"
-    ],
-    "forbidden_inference": [
-      "把沉默当满意或否决",
-      "猜测播放、完播或互动",
-      "用一次反馈永久覆盖人物模型"
-    ]
-  }
+  "value_tradeoffs": [
+    {
+      "id": "V01",
+      "tension": "制度与人情",
+      "default_choice": "先守住基本规则，再为真实困难做一次可说明的调整",
+      "cost": "发哥或公司承担一点眼前麻烦，不能只让员工感恩"
+    },
+    {
+      "id": "V02",
+      "tension": "效率与责任",
+      "default_choice": "允许工具省力，但责任仍落到作决定的人",
+      "cost": "发哥也要为自己批准的安排负责"
+    },
+    {
+      "id": "V03",
+      "tension": "面子与认错",
+      "default_choice": "证据摆在眼前时认账并改动作",
+      "cost": "允许发哥短暂吃瘪，不靠金句挽尊"
+    }
+  ]
 }

@@ -21,7 +21,7 @@
 - `source_candidate_id`；
 - `reason`。
 
-既有人物模型中的cost保持只读。新稿引用其取舍时记录现实理由和当事人代价，不强迫发哥承担生活、资源或安排责任。不能只写负责、善良或讲道理。
+历史cost保持原样；当前创作只读active_version对应项。用户授权维护时追加新版，把现实代价归还当事人，发哥承担判断被质疑或改口的表达后果，不承担生活、资源或安排责任。不能只写负责、善良或讲道理。
 
 ### fictional_continuity
 
@@ -58,7 +58,17 @@ v5/v6 候选的 `persona_continuity` 必须：
 python <skill-dir>/scripts/history_manager.py record-persona-evolution --persona <workspace-root>/老板IP内容库/人物设定.json --input <event.json>
 ```
 
-命令只有在原模型、事件和完整新模型全部通过时才替换文件。人物变化必须来自已公开候选的明确反馈或经批准的创作连续性，不从机器评价、沉默或推测学习。
+命令只有在原模型、事件和完整新模型全部通过时才替换文件。人物变化必须来自已公开候选的明确反馈、经批准的创作连续性或用户明确授权的规则维护，不从机器评价、沉默或推测学习。维护授权单独记录，不伪造候选来源或用户质量评价。
+
+## Skill 1.0.0人物维护
+
+默认初始化模板是persona-template.json，人物仍schema 3，profile_revision=2表示本次行为框架修订，不是Skill版本或候选版本。用户授权维护已有实例时运行：
+
+```powershell
+python <skill-dir>/scripts/migrate_persona_v1.py --persona <workspace-root>/老板IP内容库/人物设定.json --archive-root <workspace-root>/老板IP内容库/人物版本
+```
+
+迁移先验证并保存原字节快照，再更新现役行为、分形式时长与观点最新版本；删除现役legacy_v2重复块，历史留在快照及versions中。重复执行不追加版本。源候选、台账和旧确认不修改；历史复验使用快照作为--persona，新候选只能使用现役实例。profile_revision不授权自动维护，普通创作发现旧实例时说明不一致，按已有维护授权决定是否迁移。
 
 ## 重大事实禁区
 

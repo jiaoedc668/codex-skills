@@ -1,4 +1,4 @@
 interface:
   display_name: "发哥剧情与口播脚本"
-  short_description: "证据竞争与schema v6双形式，兼容schema v5，按显式用户结果迭代30/60参考稿"
-  default_prompt: "使用 $boss-ip-video-script-writer，默认剧情或按我指定的形式、话题、核心观点创作；保留证据竞争和正好3条候选。发哥只追问分析建议，不介入代办。普通Word需当前文案确认；明确专项授权按独立限定范围验证。"
+  short_description: "发哥剧情、口播、标题与发布文案；证据竞争，兼容schema v5，按显式用户结果迭代30/60参考稿"
+  default_prompt: "使用 $boss-ip-video-script-writer，按我的请求选择新写、参考续写、局部改稿、标题或发布介绍。新候选默认三条，指定数量优先；发哥只追问分析建议，不介入代办。标题兑现正文，普通Word需当前文案确认；专项授权按限定范围验证。"

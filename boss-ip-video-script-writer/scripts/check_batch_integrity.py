@@ -30,9 +30,9 @@ def _load_jsonl(path: Path) -> list[dict[str, Any]]:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Validate one complete three-candidate schema v5 batch."
+        description="Validate a v6 requested-count batch or historical v5 three-candidate batch."
     )
-    parser.add_argument("--inputs", type=Path, nargs=3, required=True)
+    parser.add_argument("--inputs", type=Path, nargs="+", required=True)
     parser.add_argument("--topic-pool", type=Path, required=True)
     parser.add_argument("--persona", type=Path, required=True)
     parser.add_argument("--feedback-ledger", type=Path, required=True)

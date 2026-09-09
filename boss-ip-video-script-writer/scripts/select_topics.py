@@ -53,6 +53,19 @@ SOURCE_LIST_KEYS = {
     "recurrence_sources",
     "high_interaction_sources",
 }
+VIRAL_SAMPLE_KEYS = {
+    "platform",
+    "title",
+    "url",
+    "retrieved_at",
+    "metric_scope",
+    "like_count",
+    "content_access",
+    "content_excerpt",
+    "observed_mechanism",
+    "adaptation_boundary",
+}
+READABLE_CONTENT_ACCESS = {"full_text", "captions", "transcript"}
 
 
 def _clean(value: Any) -> str:
@@ -116,6 +129,57 @@ def validate_source(source: Any) -> dict[str, Any]:
     _parse_date(value.get("source_date"), "source.source_date")
     _parse_date(value.get("retrieved_at"), "source.retrieved_at")
     return deepcopy(dict(value))
+
+
+def validate_viral_expression_samples(value: Any) -> list[dict[str, Any]]:
+    rows = _require_list(value, "viral_expression_samples")
+    if len(rows) < 3:
+        raise ValueError("viral_expression_samples requires at least three originals")
+    validated: list[dict[str, Any]] = []
+    urls: set[str] = set()
+    for index, raw in enumerate(rows):
+        sample = _require_mapping(raw, f"viral_expression_samples[{index}]")
+        if set(sample) != VIRAL_SAMPLE_KEYS:
+            missing = sorted(VIRAL_SAMPLE_KEYS - set(sample))
+            unexpected = sorted(set(sample) - VIRAL_SAMPLE_KEYS)
+            raise ValueError(
+                f"viral_expression_samples[{index}] keys differ; "
+                f"missing={missing}; unexpected={unexpected}"
+            )
+        for key in (
+            "platform",
+            "title",
+            "content_excerpt",
+            "observed_mechanism",
+            "adaptation_boundary",
+        ):
+            _require_text(sample, key, f"viral_expression_samples[{index}].{key}")
+        url = _require_text(sample, "url", f"viral_expression_samples[{index}].url")
+        parsed = urlparse(url)
+        if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+            raise ValueError(f"viral_expression_samples[{index}].url must be HTTP(S)")
+        if url in urls:
+            raise ValueError("viral_expression_samples URLs must be unique originals")
+        urls.add(url)
+        _parse_date(
+            sample.get("retrieved_at"),
+            f"viral_expression_samples[{index}].retrieved_at",
+        )
+        if sample.get("metric_scope") != "single_video":
+            raise ValueError(
+                f"viral_expression_samples[{index}].metric_scope must be single_video"
+            )
+        likes = sample.get("like_count")
+        if isinstance(likes, bool) or not isinstance(likes, int) or likes < 100000:
+            raise ValueError(
+                f"viral_expression_samples[{index}].like_count must be at least 100000"
+            )
+        if sample.get("content_access") not in READABLE_CONTENT_ACCESS:
+            raise ValueError(
+                f"viral_expression_samples[{index}] requires readable full_text, captions, or transcript"
+            )
+        validated.append(deepcopy(dict(sample)))
+    return validated
 
 
 def _validate_source_list(
@@ -292,7 +356,18 @@ def _validate_pairwise_decisions(
 def select_topics(pool: Any) -> dict[str, Any]:
     value = _require_mapping(pool, "topic pool")
     if value.get("schema_version") == 6:
+        expected_v6_keys = POOL_KEYS | {"viral_expression_samples"}
+        if set(value) != expected_v6_keys:
+            missing = sorted(expected_v6_keys - set(value))
+            unexpected = sorted(set(value) - expected_v6_keys)
+            raise ValueError(
+                f"topic pool keys must match v6; missing={missing}; unexpected={unexpected}"
+            )
+        viral_samples = validate_viral_expression_samples(
+            value.get("viral_expression_samples")
+        )
         adapted = deepcopy(dict(value))
+        adapted.pop("viral_expression_samples")
         adapted["schema_version"] = 5
         prospects = adapted.get("prospects")
         if not isinstance(prospects, list):
@@ -309,6 +384,7 @@ def select_topics(pool: Any) -> dict[str, Any]:
         for row in result["selected"] + result["vetoed"]:
             case = row["production_case"]
             case["stakeholder_cost"] = case.pop("fage_cost")
+        result["viral_expression_samples"] = viral_samples
         return result
     forbidden = sorted(_forbidden_rank_paths(value))
     if forbidden:

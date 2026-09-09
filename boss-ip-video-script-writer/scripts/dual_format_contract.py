@@ -6,11 +6,13 @@ from collections.abc import Mapping
 import re
 from copy import deepcopy
 import history_manager
+import select_topics
 
 FORMATS = {"story": ("剧情", "约60秒剧情"), "monologue": ("口播", "约30秒口播")}
 TOP_KEYS = {"schema_version", "candidate", "format", "request", "research_evidence", "topic_decision", "persona_continuity", "feedback_context", "creative_blueprint", "script"}
 BLUEPRINT_KEYS = {"situation", "stakeholder", "grievance", "choice_and_consequence", "counterargument", "judgment", "next_step", "opening_claim", "reason", "example"}
-SCRIPT_KEYS = {"theme", "core_viewpoint", "lines", "key_actions", "necessary_shots", "backstory", "ending"}
+SCRIPT_REQUIRED_KEYS = {"theme", "core_viewpoint", "lines", "key_actions", "necessary_shots", "backstory", "ending"}
+SCRIPT_KEYS = SCRIPT_REQUIRED_KEYS | {"title"}
 ACTS = {"tell", "ask", "judge", "advise", "object", "decide", "explain"}
 # Deliberately conservative detection of explicit intervention, not a semantic oracle.
 INTERVENTION = re.compile(r"(?:我|发哥)(?:已经|刚|来|会|再|亲自|负责|替你|帮你|替朋友|帮朋友|替他|帮他|给你|替她|帮她){0,4}(?:联系|介绍|安排|代办|催债|签假|批假|调班|招聘|借钱|垫钱|打电话|签字|陪你去|接孩子|留工位|留工作)")
@@ -28,10 +30,15 @@ def resolve_request(format=None, topic=None, core_viewpoint=None):
 
 
 def public_candidate(data):
-    mode=data["format"]; script=data["script"]
-    return {"format_label":FORMATS[mode][0],"duration_label":FORMATS[mode][1],"theme":script["theme"],
-            "dialogue":[{"speaker":l["speaker"],"text":l["text"]} for l in script["lines"]],
-            "key_actions":deepcopy(script["key_actions"]),"necessary_shots":deepcopy(script["necessary_shots"])}
+    script=data["script"]
+    return {
+        "subject": script["theme"],
+        "title": script.get("title", script["theme"]),
+        "full_copy": [
+            {"speaker": line["speaker"], "text": line["text"]}
+            for line in script["lines"]
+        ],
+    }
 
 
 def boundary_failures(script):
@@ -66,7 +73,14 @@ def validate_candidate(data, persona, feedback_rows):
         resolved=resolve_request(**{k:request[k] for k in ("format","topic","core_viewpoint")})
         if resolved["format"]!=mode: failures.append("request format differs from candidate format")
     except (TypeError,ValueError) as exc: failures.append(str(exc))
-    legacy._validate_research_evidence(obj("research_evidence"),failures)
+    research_evidence=obj("research_evidence")
+    legacy._validate_research_evidence(research_evidence,failures)
+    try:
+        select_topics.validate_viral_expression_samples(
+            research_evidence.get("viral_expression_samples")
+        )
+    except ValueError as exc:
+        failures.append("viral expression research invalid: "+str(exc))
     topic=obj("topic_decision")
     expected=(legacy.TOPIC_DECISION_KEYS-{"fage_cost"})|{"stakeholder_cost"}
     if set(topic)!=expected: failures.append("v6 topic_decision keys differ from contract")
@@ -82,8 +96,11 @@ def validate_candidate(data, persona, feedback_rows):
     for key in required: legacy._require_text(blueprint,key,"creative_blueprint."+key,failures)
     if mode=="story" and blueprint.get("stakeholder")=="发哥": failures.append("persona boundary: Fage cannot be stakeholder")
     script=obj("script")
-    if set(script)!=SCRIPT_KEYS: failures.append("v6 script keys differ from contract")
+    if not SCRIPT_REQUIRED_KEYS.issubset(script) or set(script)-SCRIPT_KEYS:
+        failures.append("v6 script keys differ from contract")
     for key in ("theme","core_viewpoint","backstory"): legacy._require_text(script,key,"script."+key,failures)
+    if "title" in script:
+        legacy._require_text(script,"title","script.title",failures)
     if blueprint.get("judgment")!=script.get("core_viewpoint"): failures.append("judgment must match core_viewpoint")
     lines=script.get("lines")
     if not isinstance(lines,list) or not lines: failures.append("lines must be non-empty");lines=[]

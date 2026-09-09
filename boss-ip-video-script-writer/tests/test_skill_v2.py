@@ -27,8 +27,7 @@ import rank_topics
 import semantic_review
 
 
-PERSONA_PATH = ROOT / "老板IP内容库" / "人物设定.json"
-HISTORY_LEDGER = ROOT / "老板IP内容库" / "选题台账.jsonl"
+PERSONA_PATH = SKILL / "tests" / "fixtures" / "legacy-persona.json"
 
 
 def candidate_script(index: int = 1, batch_id: str = "batch-test-001") -> dict:

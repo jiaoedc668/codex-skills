@@ -23,13 +23,34 @@ def prepare(pool,topic_id,format=None,topic=None,core_viewpoint=None,refined_cor
         if not core_viewpoint or not isinstance(refined_core_viewpoint,str) or not refined_core_viewpoint.strip() or not isinstance(direction_rationale,str) or not direction_rationale.strip():raise ValueError("refined viewpoint requires original direction and an explicit rationale")
     elif direction_rationale is not None:raise ValueError("rationale requires a refined viewpoint")
     decision={"pool_id":result["pool_id"],"topic_id":topic_id,"priority_category":selected["priority_category"],**selected["production_case"]}
+    viral_samples=deepcopy(result["viral_expression_samples"])
     evidence=deepcopy(selected["research_evidence"]);evidence["topic_kind"]=selected["topic_kind"]
+    evidence["viral_expression_samples"]=deepcopy(viral_samples)
+    authoring_requirements=(
+        {
+            "theme_scope":"life_principle",
+            "incident_role":"supporting_evidence_only",
+            "opening":"strong_judgment_or_suspense",
+            "reason_count":{"min":2,"max":4},
+            "counterargument_required":True,
+            "memorable_close_required":True,
+        }
+        if request["format"]=="monologue"
+        else {
+            "theme_scope":"concrete_conflict",
+            "incident_role":"primary_story",
+            "opening":"event_in_progress",
+            "counterargument_required":True,
+        }
+    )
     return {"schema_version":1,"kind":"boss_ip_writing_brief","request":request,
             "resolved_topic":topic or selected["title"],
             "resolved_core_viewpoint":refined_core_viewpoint or core_viewpoint or decision["fage_choice"],
             "direction_rationale":direction_rationale,
             "topic_decision":decision,"research_evidence":evidence,
-            "writing_instruction":"仅发哥，首句亮观点，理由与具体例子说透，约30秒尽量45秒内。" if request["format"]=="monologue" else "朋友或同事讲自己的事，发哥只追问分析建议，当事人决定，约60秒尽量90秒内。",
+            "viral_expression_samples":viral_samples,
+            "authoring_requirements":authoring_requirements,
+            "writing_instruction":"仅发哥；主题是人生原则，小事只作论据；首句强判断或悬念，2至4个不重复理由，回应现实反驳，以前文托得住的走心判断收尾，约30秒尽量45秒内。" if request["format"]=="monologue" else "朋友或同事讲自己的事，发哥只追问分析建议，当事人决定，约60秒尽量90秒内。",
             "boundary":"发哥不得参与、介绍、安排或代办；对白、动作、镜头、前史全部审读。"}
 
 

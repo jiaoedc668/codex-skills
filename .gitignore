@@ -6,3 +6,5 @@ __pycache__/
 dist/
 build/
 boss-ip-video-script-writer/output/
+/老板IP内容库/
+/生成脚本/

@@ -9,6 +9,24 @@ import select_topics
 from v5_fixtures import valid_direct_candidate, valid_persona, valid_topic_pool
 
 
+def viral_samples():
+    return [
+        {
+            "platform": "douyin",
+            "title": f"可读10万赞样本{i}",
+            "url": f"https://www.douyin.com/video/{7100000000000000000 + i}",
+            "retrieved_at": "2026-09-08",
+            "metric_scope": "single_video",
+            "like_count": 100000 + i,
+            "content_access": "captions",
+            "content_excerpt": "完整字幕摘要，能识别开场、论证与收尾。",
+            "observed_mechanism": "用反常识判断开场，紧接具体对照。",
+            "adaptation_boundary": "不复制原作金句、连续台词或情节。",
+        }
+        for i in range(1, 4)
+    ]
+
+
 def candidate_v6(format="story"):
     old = valid_direct_candidate()
     judgment = "照护需要兄弟姐妹共同分担，不能默认一个人辞职。"
@@ -17,7 +35,10 @@ def candidate_v6(format="story"):
         "candidate": old["candidate"],
         "format": format,
         "request": {"format": format, "topic": None, "core_viewpoint": None},
-        "research_evidence": old["research_evidence"],
+        "research_evidence": {
+            **old["research_evidence"],
+            "viral_expression_samples": viral_samples(),
+        },
         "topic_decision": {**{k:v for k,v in old["topic_decision"].items() if k != "fage_cost"}, "stakeholder_cost": "当事人失去工资和职业积累", "fage_choice": judgment},
         "persona_continuity": old["persona_continuity"],
         "feedback_context": old["feedback_context"],
@@ -69,8 +90,27 @@ class DualFormatContractTests(unittest.TestCase):
         self.assertTrue(any("boundary" in x for x in result.failures))
 
     def test_public_label_separates_legacy_dialogue_from_monologue(self):
-        self.assertEqual("口播",content_contract.build_public_candidate(candidate_v6("monologue"))["format_label"])
+        self.assertEqual(
+            {"subject", "title", "full_copy"},
+            set(content_contract.build_public_candidate(candidate_v6("monologue"))),
+        )
         self.assertEqual("30 秒稿",content_contract.build_public_candidate(valid_direct_candidate())["duration_label"])
+
+    def test_v6_public_candidate_uses_subject_title_and_full_copy(self):
+        c = candidate_v6("monologue")
+        c["script"]["title"] = "人品一旦破产，挣再多也没人敢信你"
+        self.assertEqual([], content_contract.validate_candidate(c, valid_persona(), []).failures)
+        public = content_contract.build_public_candidate(c)
+        self.assertEqual(
+            {"subject", "title", "full_copy"},
+            set(public),
+        )
+        self.assertEqual(c["script"]["theme"], public["subject"])
+        self.assertEqual(c["script"]["title"], public["title"])
+        self.assertEqual(
+            [{"speaker": line["speaker"], "text": line["text"]} for line in c["script"]["lines"]],
+            public["full_copy"],
+        )
 
     def test_original_v5_is_unchanged(self):
         self.assertEqual([],content_contract.validate_candidate(valid_direct_candidate(),valid_persona(),[]).failures)
@@ -79,6 +119,7 @@ class DualFormatContractTests(unittest.TestCase):
         pool=valid_topic_pool(with_unselected=True)
         expected=select_topics.select_topics(pool)
         pool["schema_version"]=6
+        pool["viral_expression_samples"]=viral_samples()
         for row in pool["prospects"]:
             case=row["production_case"];case["stakeholder_cost"]=case.pop("fage_cost")
         result=select_topics.select_topics(pool)

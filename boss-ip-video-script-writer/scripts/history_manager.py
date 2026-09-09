@@ -92,6 +92,61 @@ def append_rows(path: Path, rows: Iterable[dict[str, Any]]) -> int:
     return count
 
 
+def _validate_shared_preference_event(event: Any) -> dict[str, Any]:
+    if not isinstance(event, dict):
+        raise ValueError("共享偏好事件必须是对象")
+    required = {
+        "schema_version", "event_id", "event_type", "occurred_at",
+        "product_id", "user_quote", "payload",
+    }
+    missing = sorted(required - set(event))
+    if missing:
+        raise ValueError("共享偏好事件缺少字段: " + ", ".join(missing))
+    if event.get("schema_version") != 1 or event.get("event_type") != "creative_preference":
+        raise ValueError("共享偏好事件必须使用 schema_version 1 和 creative_preference")
+    if not clean(event.get("event_id")):
+        raise ValueError("共享偏好事件缺少 event_id")
+    if not clean(event.get("user_quote")):
+        raise ValueError("共享偏好事件必须保留用户原话")
+    payload = event.get("payload")
+    if not isinstance(payload, dict):
+        raise ValueError("共享偏好 payload 必须是对象")
+    if not clean(payload.get("source_skill")) or not clean(payload.get("preference")):
+        raise ValueError("共享偏好 payload 必须包含 source_skill 和 preference")
+    return deepcopy(event)
+
+
+def read_shared_preferences(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+    rows: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    with path.open("r", encoding="utf-8-sig") as handle:
+        for number, raw in enumerate(handle, 1):
+            if not raw.strip():
+                continue
+            try:
+                value = json.loads(raw)
+            except json.JSONDecodeError as exc:
+                raise ValueError(f"共享偏好第 {number} 行是损坏事件: {exc.msg}") from exc
+            event = _validate_shared_preference_event(value)
+            event_id = clean(event.get("event_id"))
+            if event_id in seen:
+                raise ValueError(f"重复 event_id: {event_id}")
+            seen.add(event_id)
+            rows.append(event)
+    return rows
+
+
+def append_shared_preference(path: Path, event: dict[str, Any]) -> dict[str, Any]:
+    normalized = _validate_shared_preference_event(event)
+    event_id = clean(normalized.get("event_id"))
+    if any(clean(item.get("event_id")) == event_id for item in read_shared_preferences(path)):
+        raise ValueError(f"重复 event_id: {event_id}")
+    append_rows(path, [normalized])
+    return normalized
+
+
 def read_feedback(path: Path) -> list[dict[str, Any]]:
     """Read only explicit feedback events; blank or absent files mean no feedback."""
     rows = read_ledger(path)
@@ -472,128 +527,11 @@ def command_record_persona_evolution(args: argparse.Namespace) -> int:
 
 
 def default_persona() -> dict[str, Any]:
-    return {
-        "schema_version": 3,
-        "updated_at": now_iso(),
-        "identity": {
-            "display_name": "发哥",
-            "age_band": "40+",
-            "role": "东来乐集团合伙人",
-            "public_role_usage": "只作内部创作坐标，前期脚本弱化公司和商业信息",
-            "audience": "40+泛人群",
-            "fiction_status": "授权虚构人设",
-        },
-        "production_frame": {
-            "platform": "抖音自然流量",
-            "locations": [
-                "公司",
-                "办公室",
-                "展厅",
-                "家中公共空间",
-                "朋友聚会场景",
-                "日常公共空间",
-            ],
-            "default_format": "根据主题选择发哥与员工、朋友或亲戚对话；对手角色可露脸或画外音",
-            "scene_selection": "先选最能承载公共冲突的低成本场景，不为老板身份强塞办公室",
-            "relationship_boundary": "朋友或亲戚只作为单条授权虚构关系，不自动成为真实履历",
-            "duration": "约30至50秒",
-            "brand_exposure": "前期弱化",
-            "commerce_stage": "暂不写商品、直播或千川转化",
-        },
-        "authorized_fictional_behaviors": [
-            {
-                "id": "B01",
-                "behavior": "为眼前员工调整一次具体安排",
-                "visible_proof": "镜头能看到改排班、改截止时间、签字或重新分配",
-                "limit": "只代表当前虚构事件，不外推为真实公司制度",
-            },
-            {
-                "id": "B05",
-                "behavior": "在朋友或亲戚参与的单条虚构事件中作出选择并承担后果",
-                "visible_proof": "镜头能看到站队、改口、付出时间金钱或承受关系变化",
-                "limit": "不外推婚姻、子女、父母或家族履历",
-            },
-        ],
-        "stable_expression": [
-            {
-                "id": "E01",
-                "pattern": "先接住具体问题，再用短反问或动作回应",
-                "avoid": "先说结论、底层逻辑、真正重要的是",
-            }
-        ],
-        "viewpoint_principles": [
-            {
-                "id": "P01",
-                "status": "active",
-                "active_version": 1,
-                "versions": [
-                    {
-                        "version": 1,
-                        "tension": "制度与人情",
-                        "default_choice": "先守规则，再为真实困难做可说明的调整",
-                        "rejected_choice": "公司替员工家庭作最终决定",
-                        "exceptions": ["眼前存在可核实的人身安全风险"],
-                        "cost": "发哥或公司承担一点眼前麻烦",
-                        "source_candidate_id": "baseline-persona",
-                        "reason": "从既有价值取舍迁移",
-                    }
-                ],
-            }
-        ],
-        "fictional_continuity": [],
-        "visible_weaknesses": [
-            {
-                "id": "W01",
-                "weakness": "嘴上先硬一下，容易被员工用原话架住",
-                "safe_payoff": "停顿后认账或调整，不靠身份压人",
-            }
-        ],
-        "comedy_relationships": [
-            {
-                "id": "R01",
-                "pair": "发哥—员工画外音",
-                "dynamic": "员工敢用发哥原话抬杠，发哥用行动收场",
-                "boundary": "不把员工写成蠢、懒或只会捧哏",
-            },
-            {
-                "id": "R04",
-                "pair": "发哥—朋友",
-                "dynamic": "双方就现实选择争辩，都可能失去面子或便利",
-                "boundary": "不虚构可核验的共同创业、借贷、违法或重大事故经历",
-            },
-            {
-                "id": "R05",
-                "pair": "发哥—亲戚",
-                "dynamic": "可在家中公共空间就钱、照护、婚姻或代际责任发生冲突",
-                "boundary": "关系只服务单条虚构事件，不补写真实家庭履历",
-            },
-        ],
-        "fact_forbidden": [
-            "精确年龄",
-            "婚姻状态",
-            "子女情况",
-            "父母情况",
-            "籍贯",
-            "创业年限",
-            "财富与债务",
-            "可核验的个人失败或家庭经历",
-        ],
-        "legacy_v2": {
-            "value_tradeoffs": [
-                {
-                    "id": "V01",
-                    "tension": "制度与人情",
-                    "default_choice": "先守规则，再为真实困难做可说明的调整",
-                    "cost": "发哥或公司承担一点眼前麻烦",
-                }
-            ],
-            "approved_continuity_claims": [],
-        },
-        "feedback_learning": {
-            "allowed_signals": ["用户明确选择、评价、原话、改稿和提供的发布数据"],
-            "forbidden_inference": ["把沉默当反馈", "猜测发布指标"],
-        },
-    }
+    """Load the single maintained template; never overwrite existing instances."""
+    template = Path(__file__).resolve().parents[1] / "references" / "persona-template.json"
+    persona = json.loads(template.read_text(encoding="utf-8"))
+    persona["updated_at"] = now_iso()
+    return persona
 
 
 def command_init(args: argparse.Namespace) -> int:
@@ -669,6 +607,33 @@ def command_recent_feedback(args: argparse.Namespace) -> int:
         "candidate_context": feedback_context(rows, args.limit),
     }
     print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0
+
+
+def command_record_shared_preference(args: argparse.Namespace) -> int:
+    event = read_json(args.input)
+    try:
+        row = append_shared_preference(args.shared_ledger, event)
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
+    print(
+        f"Recorded shared creative preference {row['event_id']} "
+        f"in {args.shared_ledger.resolve()}"
+    )
+    return 0
+
+
+def command_recent_shared_preferences(args: argparse.Namespace) -> int:
+    try:
+        rows = read_shared_preferences(args.shared_ledger)
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
+    recent = rows[-args.limit :] if args.limit > 0 else []
+    print(json.dumps({
+        "shared_ledger": str(args.shared_ledger.resolve()),
+        "event_count": len(rows),
+        "recent_events": recent,
+    }, ensure_ascii=False, indent=2))
     return 0
 
 
@@ -765,6 +730,22 @@ def build_parser() -> argparse.ArgumentParser:
     recent_parser.add_argument("--feedback-ledger", required=True, type=Path)
     recent_parser.add_argument("--limit", type=int, default=12)
     recent_parser.set_defaults(func=command_recent_feedback)
+
+    shared_record_parser = subparsers.add_parser(
+        "record-shared-preference",
+        help="Append one explicit shared creative preference",
+    )
+    shared_record_parser.add_argument("--input", required=True, type=Path)
+    shared_record_parser.add_argument("--shared-ledger", required=True, type=Path)
+    shared_record_parser.set_defaults(func=command_record_shared_preference)
+
+    shared_recent_parser = subparsers.add_parser(
+        "recent-shared-preferences",
+        help="Read recent cross-skill creative preferences",
+    )
+    shared_recent_parser.add_argument("--shared-ledger", required=True, type=Path)
+    shared_recent_parser.add_argument("--limit", type=int, default=12)
+    shared_recent_parser.set_defaults(func=command_recent_shared_preferences)
 
     summary_parser = subparsers.add_parser("summarize", help="Print current topic and script state")
     summary_parser.add_argument("--ledger", required=True, type=Path)

@@ -13,7 +13,9 @@ def derive(manifests,feedback_rows):
         at=datetime.fromisoformat(m["submitted_at"])
         if at.tzinfo is None:raise ValueError("manifest submission time must include timezone")
         candidates=m.get("candidates")
-        if not isinstance(candidates,list) or len(candidates)!=3:raise ValueError("manifest requires exactly three candidates")
+        requested=m.get("requested_candidate_count",3)
+        if isinstance(requested,bool) or not isinstance(requested,int) or requested<1:raise ValueError("requested_candidate_count must be a positive integer")
+        if not isinstance(candidates,list) or len(candidates)!=requested:raise ValueError("manifest candidate count must match requested_candidate_count (default 3)")
         ids=set()
         for c in candidates:
             if not isinstance(c,dict) or set(c)!={"candidate_id","revision_id"} or not isinstance(c["candidate_id"],str) or not c["candidate_id"] or c["candidate_id"] in ids or not re.fullmatch(r"r[1-9][0-9]*",str(c["revision_id"])):raise ValueError("manifest candidates require unique IDs and current revisions")
@@ -32,7 +34,11 @@ def derive(manifests,feedback_rows):
             if matches:evaluations.append(matches[-1]["evaluation"])
         count=evaluations.count("direct_shoot");evaluated=len(evaluations)
         result={"batch_id":m["batch_id"],"format":mode,"direct_shoot_count":count,"evaluated_candidate_count":evaluated,"state":"pending","requires_root_cause_change":False,"requires_rollback":False,"failed_same_root_cause_count":0}
-        if evaluated==3:
+        requested=m.get("requested_candidate_count",3)
+        if requested!=3:
+            result["requested_candidate_count"]=requested
+            if evaluated==requested:result["state"]="user_reviewed_custom_batch"
+        elif evaluated==3:
             root=m["root_cause"]["id"]
             if count>=2:fail_count[mode]=0;result["state"]="user_passed_batch"
             else:

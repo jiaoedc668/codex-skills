@@ -1011,8 +1011,15 @@ def validate_batch(
     failures: list[str] = []
     if not isinstance(candidates, list):
         return ["candidate batch must contain exactly 3 complete scripts"]
-    if len(candidates) != 3:
-        failures.append("candidate batch must contain exactly 3 complete scripts")
+    requested_count = 3
+    if (candidates and all(isinstance(c, Mapping) and c.get("schema_version") == 6 for c in candidates)
+            and isinstance(topic_pool, Mapping) and topic_pool.get("schema_version") == 6):
+        requested_count = topic_pool.get("requested_candidate_count", 3)
+        if isinstance(requested_count, bool) or not isinstance(requested_count, int) or requested_count < 1:
+            failures.append("requested_candidate_count must be a positive integer")
+            requested_count = 3
+    if len(candidates) != requested_count:
+        failures.append(f"candidate batch must contain exactly {requested_count} complete scripts")
 
     candidate_rows = [item for item in candidates if isinstance(item, Mapping)]
     if len(candidate_rows) != len(candidates):
@@ -1037,8 +1044,8 @@ def validate_batch(
         failures.append("candidate batch requires unique candidate IDs")
 
     positions = [identity.get("position") for identity in identities]
-    if sorted(position for position in positions if isinstance(position, int)) != [1, 2, 3]:
-        failures.append("candidate batch positions must be exactly positions 1, 2, and 3")
+    if sorted(position for position in positions if isinstance(position, int) and not isinstance(position, bool)) != list(range(1, requested_count + 1)):
+        failures.append("candidate batch positions must be exactly positions 1, 2, and 3" if requested_count == 3 else f"candidate batch positions must be exactly positions 1 through {requested_count}")
 
     batch_ids = {_clean(identity.get("batch_id")) for identity in identities}
     if len(batch_ids) != 1 or "" in batch_ids:

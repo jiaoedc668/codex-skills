@@ -6,11 +6,12 @@ from pathlib import Path
 import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"scripts"))
 from v5_fixtures import valid_topic_pool,valid_persona
-from test_dual_format_v6 import candidate_v6
+from test_dual_format_v6 import candidate_v6,viral_samples
 import content_contract
 
 def pool6():
     p=valid_topic_pool(with_unselected=True);p["schema_version"]=6
+    p["viral_expression_samples"]=viral_samples()
     for r in p["prospects"]:r["production_case"]["stakeholder_cost"]=r["production_case"].pop("fage_cost")
     return p
 
@@ -30,6 +31,35 @@ class AuthoringV6Tests(unittest.TestCase):
         self.assertEqual({"format":"monologue","topic":"家庭责任","core_viewpoint":"照护应共同分担"},b["request"])
         self.assertEqual("照护应共同分担",b["resolved_core_viewpoint"])
         with self.assertRaises(ValueError):self.m.prepare(pool6(),"topic-1",format="direct_dialogue_30")
+
+    def test_monologue_brief_carries_verified_samples_and_large_theme_contract(self):
+        brief = self.m.prepare(pool6(), "topic-1", format="monologue")
+        self.assertEqual(3, len(brief["viral_expression_samples"]))
+        self.assertEqual(
+            {
+                "theme_scope": "life_principle",
+                "incident_role": "supporting_evidence_only",
+                "opening": "strong_judgment_or_suspense",
+                "reason_count": {"min": 2, "max": 4},
+                "counterargument_required": True,
+                "memorable_close_required": True,
+            },
+            brief["authoring_requirements"],
+        )
+
+    def test_candidate_must_preserve_run_level_viral_samples(self):
+        brief = self.m.prepare(
+            pool6(),
+            "topic-1",
+            format="monologue",
+            core_viewpoint=candidate_v6("monologue")["script"]["core_viewpoint"],
+        )
+        candidate = candidate_v6("monologue")
+        assembled = self.m.assemble(brief, candidate, valid_persona(), [])
+        self.assertEqual(
+            brief["viral_expression_samples"],
+            assembled["research_evidence"]["viral_expression_samples"],
+        )
 
     def test_vetoed_or_unselected_cannot_enter_writing(self):
         with self.assertRaises(ValueError):self.m.prepare(pool6(),"topic-4")

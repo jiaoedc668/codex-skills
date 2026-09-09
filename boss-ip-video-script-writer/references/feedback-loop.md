@@ -17,10 +17,12 @@
 使用history_manager.py recent-feedback读取近期投影，record-feedback追加单事件；反馈上下文与候选必须一致。原事件JSON保存用户原话，再调用现成校验器，不能手改账本内容。
 
 ## v6状态
-schema2 manifest绑定format、batch_id、submitted_at、正好三份candidate_id/revision_id与可证伪root_cause。acceptance_state.py对新manifest调用format_acceptance，仅统计同批同形式当前修订的显式评价；旧v5事件和成绩不能自动继承为口播通过。
+schema2 manifest绑定format、batch_id、submitted_at、候选candidate_id/revision_id与可证伪root_cause。默认三份，用户指定数量时记录实际集合并遵循现有状态机合同；不能补造候选凑数。acceptance_state.py对新manifest调用format_acceptance，仅统计同批同形式当前修订的显式评价；旧v5事件和成绩不能自动继承为口播通过。
 
 剧情与口播分别跟踪。全部三份评价前保持pending；至少两份direct_shoot才是这一批的用户通过，不代表未来稿稳定可拍。未通过须保留失败稿改变根因，同根因连续三次失败推倒方法；同形式退步标注回退需要，记录比较。
 
-用户明确只改某条或某段时，优先限定修订，不自动重做其他已认可正文。初稿与修订结果分别报告，不能将精修通过倒写为初稿成功。新候选通常展示后等逐条评价；七篇专项任务已授权直接交Word，不因没有新版人类评分阻塞交付，也不代填评价。
+上段是默认三条的批次标准。指定非三条时manifest显式写requested_candidate_count，未评完保持pending；评完标user_reviewed_custom_batch，逐条保留真实结果，不称三条批次通过，也不并入默认三条的退步比较和失败次数。需要怎样继续按用户反馈决定，不自动凑三条或外推通过阈值。
+
+用户明确只改某条或某段时，优先限定修订，不自动重做其他已认可正文。初稿与修订结果分别报告，不能将精修通过倒写为初稿成功。新候选通常展示后等逐条评价；明确专项交付授权不因没有新版人类评分阻塞授权范围内的交付，也不代填评价。
 
 历史schema1 manifest继续使用原v5状态机读取；不要把新旧manifest混在同一次新形式统计。人工认可只由真实用户事件支持，生成器与审稿器不能自行追加。

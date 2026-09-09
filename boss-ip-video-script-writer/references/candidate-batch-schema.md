@@ -7,14 +7,14 @@
 
 candidate保持batch_id、candidate_id、position、revision_id、evaluation_status；候选状态为awaiting_user_evaluation，不能预填可拍结果。request精确保留format（story默认或monologue）、topic和core_viewpoint（未指定为null）。script里theme与core_viewpoint是实际提炼结论。用户给出笼统观点可深化，brief另外记录direction_rationale，人工核对方向；不能把改写后的观点伪装成用户原话。
 
-research_evidence保留现有证据门。topic_decision包含pool_id、topic_id、priority_category、concrete_event、concrete_anchor、audience_stake、strongest_counterargument、fage_choice、stakeholder_cost、ending_consequence、audience_response_space；逐字段匹配已选题。stakeholder_cost是当事人的现实损失，不强迫发哥承担代价。
+research_evidence保留现有证据门，并必须原样带入选题池顶层已通过校验的 `viral_expression_samples`。topic_decision包含pool_id、topic_id、priority_category、concrete_event、concrete_anchor、audience_stake、strongest_counterargument、fage_choice、stakeholder_cost、ending_consequence、audience_response_space；逐字段匹配已选题。stakeholder_cost是当事人的现实损失，不强迫发哥承担代价。
 
 persona_continuity继续引用人物模型有效版本；feedback_context必须等于独立台账当前投影，不自填评价。
 
 ## 蓝图与脚本
 creative_blueprint精确包含situation、stakeholder、grievance、choice_and_consequence、counterargument、judgment、next_step、opening_claim、reason、example。剧情记录当事人处境、委屈、选择后果、反方难题、发哥判断和当事人下一步；opening_claim可空。口播只需观点论证，不要求另一方现场出现，stakeholder/grievance/choice_and_consequence可空；opening_claim必须是第一句完整台词。
 
-script精确包含theme、core_viewpoint、lines、key_actions、necessary_shots、backstory、ending。judgment与core_viewpoint一致。
+script包含theme、core_viewpoint、lines、key_actions、necessary_shots、backstory、ending，并允许title。新候选必须写title；历史v6没有title时继续读取，并只在兼容导出时用theme代替。theme是题材，title是面向观众的成片标题。judgment与core_viewpoint一致。
 - lines逐句为line_id（L1连续递增）、speaker、text、dialogue_act；动作类型tell/ask/judge/advise/object/decide/explain。口播全篇仅发哥。
 - key_actions可为空；非空项为action_id、after_line_id、actor、action、consequence。改变生活安排的动作由当事人承担；发哥说话反应写必要镜头，不写代办行动。
 - necessary_shots为非空文字数组；backstory写清前史和关系。
@@ -23,11 +23,11 @@ script精确包含theme、core_viewpoint、lines、key_actions、necessary_shots
 不设每二三句机械配额，但必须逐篇审读推进是否具体。所有指向对白的引用都必须有效。结构门不能判断人类共鸣或故事好坏。
 
 ## 日常三候选
-正好三篇、同batch_id同format同schema、position为1/2/3、candidate_id唯一，topic_id集合等于已选三题；选题依据逐字段一致。允许同母题或同拍法，禁止同题换皮、连续对白复用或三稿同一因果骨架。七篇专项修订另审，不能替代日常筛选流程。
+默认正好三篇、同batch_id同format同schema、position连续、candidate_id唯一，topic_id集合等于已选题；用户当轮明确指定数量时以指定数量为准。选题依据逐字段一致。允许同母题或同拍法，禁止同题换皮、连续对白复用或重复同一因果骨架。
 
-公開对象从build_public_candidate导出format_label、duration_label、theme、dialogue、key_actions、necessary_shots，不能用简介替代完整对白。
+公开对象从build_public_candidate固定导出subject、title、full_copy，依次对应“题材＋标题＋完整文案”。动作、镜头、形式标签、时长和内部字段保留在候选内部，不进入候选稿展示；不能用简介替代完整文案。
 
 ## 新manifest与旧兼容
-schema2 manifest包含batch_id、format、带时区submitted_at、candidates（正好三项candidate_id/revision_id）、root_cause（id/hypothesis/changed_layer/root_level_change）。manifest只绑定已展示版本，不携带评价；状态由显式反馈推导。历史schema1 manifest及v5候选继续走旧分支，不继承为新口播成绩。
+schema2 manifest包含batch_id、format、带时区submitted_at、candidates（默认三项candidate_id/revision_id）、root_cause（id/hypothesis/changed_layer/root_level_change）。用户指定其他数量时增加requested_candidate_count，与候选实际数量及选题池一致。非三条逐项统计、不混入默认三条批次成绩，详见feedback-loop.md。manifest只绑定已展示版本，不携带评价；状态由显式反馈推导。历史schema1 manifest及v5候选继续走旧分支，不继承为新口播成绩。
 
 指定topic时，request另含topic_alignment，精确字段requested_topic/script_excerpt/explanation；话题应与原输入相同，摘录须逐字存在正文，并说明关联。结构门核对绑定，语义关联仍需审读，不能把作者自报理由当作机器证明相关。
