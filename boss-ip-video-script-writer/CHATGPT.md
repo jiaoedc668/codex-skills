@@ -45,6 +45,8 @@
 
 需要正式运行 `select_topics.py`、`history_manager.py`、完整性检查、状态写入、编号或本机 Word 核验时，生成清晰的 Codex 执行任务交给本地 Codex。
 
+本地 Codex 如需更新公开快照，必须由用户明确提供业务文件和共享状态文件路径后运行 `sync_public_context.py`。同步器只读取本地状态，按固定白名单写入 `chat-context/`；它不会把完整反馈、选题、聊天或稿件发布到网页 Chat。
+
 ## Word 与正式交付
 
 普通 Chat 可以帮助整理文案或制作非正式预览文件，但正式 Word 交付仍必须满足 `SKILL.md` 与 `references/document-schema.md` 的确认、编号、SHA256、生成和逐页视觉检查流程。

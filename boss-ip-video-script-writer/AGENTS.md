@@ -8,4 +8,5 @@
 - references/persona-template.json是新项目默认人物；修改相关规则时同时检查初始化器、迁移器及实际项目人物实例，不能只改说明。
 - 新生产保留schema v6，历史v5/v4读取兼容；历史样例不升级为新候选或人工认可。
 - Python修改先运行定向测试，再运行本目录tests全量unittest及scripts的compileall；git diff --check必须通过。
+- `sync_public_context.py`只读业务人物、反馈、选题和共享台账，使用固定公开白名单生成`chat-context/`；不得修改业务输入或写入user_quote、内部路径、完整稿件和敏感信息。
 - Skill修改完成后按仓库迭代流程提交和推送，逐路径暂存，标签使用boss-ip-v<版本>；不混入其他Skill的既有改动。

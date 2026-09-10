@@ -19,6 +19,14 @@
 
 `boss-ip-video-script-writer/CHATGPT.md` 仅用于普通 ChatGPT Chat 的环境适配；本地 Codex 正常执行 Skill 时忽略该文件。网页 Chat 通过 `chat-context/` 读取公开安全快照，缺失或未同步时按 `CHATGPT.md` 的 fallback 规则处理。
 
+公开快照只由本地 Codex 在明确指定业务路径后同步：
+
+```powershell
+python <skill-dir>/scripts/sync_public_context.py --persona <business-root>/人物设定.json --feedback-ledger <business-root>/反馈台账.jsonl --topic-ledger <business-root>/选题台账.jsonl --shared-ledger <shared-root>/shared-creative-preferences.jsonl --output-dir <skill-dir>/chat-context
+```
+
+同步器只写固定白名单投影，业务状态仍以本地文件为准；失败时不会覆盖已有快照。
+
 ## 迭代流程
 
 每次修改 Skill 后按以下顺序执行：

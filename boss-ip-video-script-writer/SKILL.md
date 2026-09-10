@@ -2,7 +2,7 @@
 name: boss-ip-video-script-writer
 description: Use when 为发哥老板IP创作或优化抖音、视频号自然流量剧情、口播、标题、发布介绍，参考续写或制作确认后的Word；不用于商品口播、千川广告或直播带货。
 metadata:
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Boss IP Video Script Writer
@@ -34,6 +34,14 @@ metadata:
 python <skill-dir>/scripts/history_manager.py recent-shared-preferences --shared-ledger <shared-state-root>/shared-creative-preferences.jsonl --limit 12
 python <skill-dir>/scripts/history_manager.py record-shared-preference --input <explicit-shared-event.json> --shared-ledger <shared-state-root>/shared-creative-preferences.jsonl
 ```
+
+需要更新普通 ChatGPT Chat 可读的公开状态时，明确指定本地业务文件和共享状态文件，只运行以下只读输入、白名单输出的同步器：
+
+```powershell
+python <skill-dir>/scripts/sync_public_context.py --persona <business-root>/人物设定.json --feedback-ledger <business-root>/反馈台账.jsonl --topic-ledger <business-root>/选题台账.jsonl --shared-ledger <shared-root>/shared-creative-preferences.jsonl --output-dir <skill-dir>/chat-context
+```
+
+同步器不得把 `user_quote`、内部路径、完整稿件、研究正文、认证信息或可识别敏感信息写入 `chat-context/`；失败时保留已有快照。
 
 共享事件必须使用 `schema_version: 1`、全局唯一 `event_id`、`event_type: creative_preference`、`occurred_at`、`product_id`、非空 `user_quote`，以及含 `source_skill` 和 `preference` 的 `payload`。只追加，不覆盖；损坏事件、重复 ID 或缺少原话时拒绝写入。
 

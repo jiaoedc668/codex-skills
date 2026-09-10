@@ -2,6 +2,21 @@
 
 版本唯一值为SKILL.md的metadata.version；已发布标签不移动。发布流程见references/release-management.md。
 
+## 1.2.0 — 2026-09-10
+
+兼容新增本地业务状态到普通 ChatGPT Chat 公开快照的同步器，不改变业务人物、反馈、选题和共享台账的真相源，也不改变 schema v6、人物 schema 3、本地反馈状态机或 Word 授权门。
+
+### 本次优化
+
+- 新增 `scripts/sync_public_context.py`，优先复用 `history_manager.py` 的读取和反馈汇总能力。
+- 新增固定白名单投影，剥离 `user_quote`、内部路径、完整稿件、研究正文、认证信息、手机号和邮箱等敏感信息。
+- 同步器只读取本地业务状态，四个公开快照全部构造并通过安全检查后才写入；读取或安全检查失败时保留已有快照。
+- 增加源文件字节不变、敏感字段剥离、失败不覆盖和显式路径 CLI 测试。
+
+### 验证
+
+本地运行新增同步器定向测试、完整 unittest、scripts compileall、四个公开快照 JSON 语法检查和 `git diff --check`。
+
 ## 1.1.0 — 2026-09-10
 
 兼容新增普通 ChatGPT Chat 读取方式，不改变 schema v6、人物 schema 3、本地反馈状态机、Word 授权门或 Codex 本地执行流程。
