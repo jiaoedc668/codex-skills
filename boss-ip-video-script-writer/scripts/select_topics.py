@@ -132,9 +132,7 @@ def validate_source(source: Any) -> dict[str, Any]:
 
 
 def validate_viral_expression_samples(value: Any) -> list[dict[str, Any]]:
-    rows = _require_list(value, "viral_expression_samples")
-    if len(rows) < 3:
-        raise ValueError("viral_expression_samples requires at least three originals")
+    rows = _require_list(value, "viral_expression_samples", allow_empty=True)
     validated: list[dict[str, Any]] = []
     urls: set[str] = set()
     for index, raw in enumerate(rows):
@@ -195,12 +193,26 @@ def _validate_source_list(
     return validated
 
 
-def validate_research_evidence(kind: str, evidence: Any) -> dict[str, Any]:
+def validate_research_evidence(kind: str, evidence: Any, *, creative_first: bool = False) -> dict[str, Any]:
     value = _require_mapping(evidence, "research_evidence")
     if kind not in {"current_issue", "evergreen"}:
         raise ValueError("topic_kind must be current_issue or evergreen")
 
+    if creative_first:
+        required = value.get("research_required", False)
+        if not isinstance(required, bool):
+            raise ValueError("research_evidence.research_required must be a boolean")
+        for key in SOURCE_LIST_KEYS & set(value):
+            _validate_source_list(value, key, allow_empty=True)
+        if required and not (value.get("sources") or value.get("fact_sources")):
+            raise ValueError("required research needs non-empty sources or fact_sources")
+        # Fiction needs no platform proof; all supplied sources remain validated.
+        if kind == "evergreen":
+            return deepcopy(dict(value))
+
     for key in SOURCE_LIST_KEYS & set(value):
+        if creative_first:
+            continue
         if key in {"heat_signals", "recurrence_sources", "high_interaction_sources"}:
             continue
         _validate_source_list(value, key, allow_empty=False)
@@ -255,7 +267,7 @@ def _validate_production_case(value: Any, topic_id: str) -> None:
         )
 
 
-def _validate_prospects(prospects: list[Any]) -> tuple[list[dict[str, Any]], set[str]]:
+def _validate_prospects(prospects: list[Any], *, creative_first: bool = False) -> tuple[list[dict[str, Any]], set[str]]:
     validated: list[dict[str, Any]] = []
     topic_ids: set[str] = set()
     for index, raw_prospect in enumerate(prospects):
@@ -274,7 +286,7 @@ def _validate_prospects(prospects: list[Any]) -> tuple[list[dict[str, Any]], set
             "priority_category",
             f"prospect {topic_id}.priority_category",
         )
-        validate_research_evidence(kind, prospect.get("research_evidence"))
+        validate_research_evidence(kind, prospect.get("research_evidence"), creative_first=creative_first)
         _validate_production_case(prospect.get("production_case"), topic_id)
         vetoes = _require_list(
             prospect.get("veto_reasons"),
@@ -353,7 +365,7 @@ def _validate_pairwise_decisions(
     return validated
 
 
-def select_topics(pool: Any) -> dict[str, Any]:
+def select_topics(pool: Any, *, _creative_first: bool = False) -> dict[str, Any]:
     value = _require_mapping(pool, "topic pool")
     if value.get("schema_version") == 6:
         expected_v6_keys = POOL_KEYS | {"viral_expression_samples"}
@@ -380,7 +392,7 @@ def select_topics(pool: Any) -> dict[str, Any]:
             if not isinstance(cost, str) or not cost.strip():
                 raise ValueError("v6 stakeholder_cost must be non-empty")
             case["fage_cost"] = cost
-        result = select_topics(adapted)
+        result = select_topics(adapted, _creative_first=True)
         for row in result["selected"] + result["vetoed"]:
             case = row["production_case"]
             case["stakeholder_cost"] = case.pop("fage_cost")
@@ -406,7 +418,7 @@ def select_topics(pool: Any) -> dict[str, Any]:
         raise ValueError("requested_candidate_count must be a positive integer")
 
     prospects, topic_ids = _validate_prospects(
-        _require_list(value.get("prospects"), "prospects")
+        _require_list(value.get("prospects"), "prospects"), creative_first=_creative_first
     )
     eligible = [item for item in prospects if not item["veto_reasons"]]
     eligible_ids = {item["topic_id"] for item in eligible}

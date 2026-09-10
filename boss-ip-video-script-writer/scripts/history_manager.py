@@ -16,6 +16,7 @@ from typing import Any, Iterable
 
 
 VALID_FEEDBACK_TYPES = {
+    "candidate_feedback",
     "candidate_selection",
     "candidate_evaluation",
     "candidate_length_evaluation",
@@ -171,7 +172,7 @@ def validate_feedback_event(data: dict[str, Any]) -> dict[str, Any]:
     event_type = clean(data.get("event_type"))
     if event_type not in VALID_FEEDBACK_TYPES:
         raise SystemExit(
-            "event_type must be candidate_selection, candidate_evaluation, "
+            "event_type must be candidate_feedback, candidate_selection, candidate_evaluation, "
             "candidate_length_evaluation, copy_confirmation, revision, or "
             "publication_metrics."
         )
@@ -196,7 +197,17 @@ def validate_feedback_event(data: dict[str, Any]) -> dict[str, Any]:
         if data["format"] not in {"story", "monologue"}:
             raise SystemExit("feedback format must be story or monologue")
         row["format"] = data["format"]
-    if event_type == "candidate_selection":
+    if event_type == "candidate_feedback":
+        if not batch_id or not candidate_id or not row["revision_id"]:
+            raise SystemExit("candidate_feedback requires batch_id, candidate_id, and revision_id.")
+        preserve = clean_list(data.get("preserve", []), "preserve")
+        avoid = clean_list(data.get("avoid", []), "avoid")
+        if not preserve and not avoid:
+            raise SystemExit("candidate_feedback requires preserve or avoid items.")
+        if any(key in data for key in ("evaluation", "selection", "content_sha256")):
+            raise SystemExit("candidate_feedback cannot imply evaluation, selection, or copy confirmation.")
+        row.update({"preserve": preserve, "avoid": avoid})
+    elif event_type == "candidate_selection":
         if not batch_id or not candidate_id:
             raise SystemExit("candidate_selection requires batch_id and candidate_id.")
         row["selection"] = "selected"
@@ -213,7 +224,7 @@ def validate_feedback_event(data: dict[str, Any]) -> dict[str, Any]:
         preserve = clean_list(data.get("preserve", []), "preserve")
         avoid = clean_list(data.get("avoid", []), "avoid")
         if evaluation == "direct_shoot" and not preserve:
-            raise SystemExit("direct_shoot feedback requires at least one explicit preserve item.")
+            raise SystemExit("direct_shoot feedback requires at least one preserve item with attribution.")
         if evaluation in {"major_revision", "rejected"} and not avoid:
             raise SystemExit(f"{evaluation} feedback requires at least one explicit avoid item.")
         if not candidate_id or not row["revision_id"]:

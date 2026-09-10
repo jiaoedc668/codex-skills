@@ -74,7 +74,12 @@ def validate_candidate(data, persona, feedback_rows):
         if resolved["format"]!=mode: failures.append("request format differs from candidate format")
     except (TypeError,ValueError) as exc: failures.append(str(exc))
     research_evidence=obj("research_evidence")
-    legacy._validate_research_evidence(research_evidence,failures)
+    try:
+        select_topics.validate_research_evidence(
+            research_evidence.get("topic_kind"), research_evidence, creative_first=True
+        )
+    except ValueError as exc:
+        failures.append("research_evidence invalid: "+str(exc))
     try:
         select_topics.validate_viral_expression_samples(
             research_evidence.get("viral_expression_samples")

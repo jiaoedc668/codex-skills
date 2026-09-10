@@ -2,6 +2,27 @@
 
 版本唯一值为SKILL.md的metadata.version；已发布标签不移动。发布流程见references/release-management.md。
 
+## 1.3.0 — 2026-09-10
+
+- 调整创作优先级，停留感、真人感和冲突质量提前；人物与事实安全仍为硬约束。
+- 新增 Raw Draft 自由创作与 Creative Review，选题池、brief、蓝图和schema后移；schema描述已成立的故事，不反向生成故事。
+- 普通常青虚构剧情取消“3条10万赞原作”和跨期高互动证据的阻断门；原作研究成为可选表达增强。
+- 保留热点、事实和明确研究任务的严格来源核验；所有填写的高赞样本仍须真实、单视频达标且内容可读，禁止凑数或拼接原作。
+- 强化具体行为冲突及符合人物身份的情绪触发句；发哥可以追问、被反驳、改口，减少全知型与老师型表达，剧情原则上只保留一次完整观点输出。
+- 增加前3秒具体行为 Hook 检查、演员读得出口测试及真人优先语义审读，不以自动评分代替创作。
+- 强化事件内生型结尾，回收当前动作、损失与选择，减少万能人生金句。
+- 强化正向反馈机制沉淀与keep实际使用；原话与系统提炼分开，减少只累计avoid造成的保守化。
+
+### 兼容与实现
+
+候选仍schema v6，历史v5/v6继续读取，不迁移人物模型、旧候选、正式稿或业务台账。研究校验最小调整于select_topics.py及dual_format_contract.py：viral_expression_samples仍为数组但不设最少条数；v6增加可选research_required布尔标记，true须sources或fact_sources，current_issue仍要求七天内热度来源。旧v5研究分支保留。
+
+反馈仍schema2，history_manager.py兼容新增candidate_feedback事件，复用preserve/avoid并投影keep，不计可拍验收、不覆盖旧字节。新版可读旧台账；含新事件的台账不能直接退回旧版读取器。未增加Raw Draft程序对象、effective_mechanisms或质量评分字段。
+
+### 验证
+
+研究门定向9项、正向反馈定向4项及现有反馈/历史验收测试通过；完整unittest共226项通过，scripts compileall及git diff --check通过。相对链接和安装Junction的入口哈希一致性检查通过。官方quick_validate因本机缺少PyYAML未能启动，未新增依赖，不冒称该检查通过。独立规则行为检查确认旧版常青创作被阻断，新版先自由创作；这不是用户可拍验收，也不证明传播效果或来源在线真实性。历史版本记录中的旧研究门仅描述当时行为，以1.3.0现役规则为准。
+
 ## 1.2.0 — 2026-09-10
 
 兼容新增本地业务状态到普通 ChatGPT Chat 公开快照的同步器，不改变业务人物、反馈、选题和共享台账的真相源，也不改变 schema v6、人物 schema 3、本地反馈状态机或 Word 授权门。

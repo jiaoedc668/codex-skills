@@ -41,11 +41,79 @@ class ViralResearchV6Tests(unittest.TestCase):
         result = select_topics.select_topics(valid_v6_pool())
         self.assertEqual(3, len(result["viral_expression_samples"]))
 
-    def test_fewer_than_three_samples_is_rejected(self) -> None:
+    def test_fewer_than_three_samples_is_allowed(self) -> None:
         pool = valid_v6_pool()
-        pool["viral_expression_samples"] = pool["viral_expression_samples"][:2]
-        with self.assertRaisesRegex(ValueError, "at least three"):
+        for count in (0, 1, 2):
+            pool["viral_expression_samples"] = [viral_sample(i) for i in range(count)]
+            self.assertEqual(count, len(select_topics.select_topics(pool)["viral_expression_samples"]))
+
+    def test_evergreen_without_external_evidence_survives_authoring(self) -> None:
+        import create_candidate
+        import content_contract
+        from test_dual_format_v6 import candidate_v6
+        from v5_fixtures import valid_persona
+        pool = valid_v6_pool()
+        pool["viral_expression_samples"] = []
+        for row in pool["prospects"]:
+            row["topic_kind"] = "evergreen"
+            row["research_evidence"] = {}
+        draft = candidate_v6()
+        brief = create_candidate.prepare(pool, "topic-1", core_viewpoint=draft["script"]["core_viewpoint"])
+        candidate = create_candidate.assemble(brief, draft, valid_persona(), [])
+        self.assertEqual([], content_contract.validate_candidate(candidate, valid_persona(), []).failures)
+        self.assertEqual([], candidate["research_evidence"]["viral_expression_samples"])
+
+    def test_current_issue_still_requires_heat_evidence_without_samples(self) -> None:
+        pool = valid_v6_pool()
+        pool["viral_expression_samples"] = []
+        pool["prospects"][0]["research_evidence"]["heat_signals"] = []
+        with self.assertRaisesRegex(ValueError, "heat signal"):
             select_topics.select_topics(pool)
+
+    def test_fact_or_explicit_research_requires_sources_in_pool_and_candidate(self) -> None:
+        import content_contract
+        from test_dual_format_v6 import candidate_v6
+        from v5_fixtures import valid_persona, valid_source
+        pool = valid_v6_pool()
+        pool["viral_expression_samples"] = []
+        row = pool["prospects"][0]
+        row["topic_kind"] = "evergreen"
+        row["research_evidence"] = {"research_required": True}
+        with self.assertRaisesRegex(ValueError, "required research"):
+            select_topics.select_topics(pool)
+        candidate = candidate_v6()
+        candidate["research_evidence"] = {
+            "topic_kind": "evergreen", "research_required": True,
+            "viral_expression_samples": [],
+        }
+        self.assertTrue(any("required research" in f for f in content_contract.validate_candidate(candidate, valid_persona(), []).failures))
+        row["research_evidence"]["fact_sources"] = [valid_source("2026-01-01")]
+        select_topics.select_topics(pool)
+        candidate["research_evidence"].update(row["research_evidence"])
+        self.assertEqual([], content_contract.validate_candidate(candidate, valid_persona(), []).failures)
+
+    def test_optional_research_cannot_hide_malformed_evidence(self) -> None:
+        for evidence in (
+            {"sources": [{"url": "invented"}]},
+            {"recurrence_sources": [{"url": "invented"}]},
+            {"heat_signals": "not a list"},
+            {"research_required": "false"},
+        ):
+            with self.subTest(evidence=evidence):
+                pool = valid_v6_pool()
+                pool["viral_expression_samples"] = []
+                pool["prospects"][0].update(topic_kind="evergreen", research_evidence=evidence)
+                with self.assertRaises(ValueError):
+                    select_topics.select_topics(pool)
+
+    def test_even_one_optional_sample_must_be_readable_and_verified_shape(self) -> None:
+        for change in ({"like_count": True}, {"url": "search-only"}, {"content_excerpt": ""}, {"content_access": "unavailable"}):
+            with self.subTest(change=change):
+                pool = valid_v6_pool()
+                pool["viral_expression_samples"] = [viral_sample(1)]
+                pool["viral_expression_samples"][0].update(change)
+                with self.assertRaises(ValueError):
+                    select_topics.select_topics(pool)
 
     def test_account_total_or_below_100k_is_rejected(self) -> None:
         for mutation, message in (
