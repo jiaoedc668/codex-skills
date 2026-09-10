@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "snapshot_status": "not_synced",
-  "updated_at": null,
+  "snapshot_status": "current",
+  "updated_at": "2026-09-10T10:45:58+08:00",
   "source_of_truth": "local shared creative preferences ledger",
   "public_safe_only": true,
   "max_items": 12,

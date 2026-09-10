@@ -1,9 +1,287 @@
 {
   "schema_version": 1,
-  "snapshot_status": "not_synced",
-  "updated_at": null,
+  "snapshot_status": "current",
+  "updated_at": "2026-09-10T10:45:58+08:00",
   "source_of_truth": "local feedback ledger",
   "public_safe_only": true,
   "max_items": 12,
-  "items": []
+  "items": [
+    {
+      "event_type": "candidate_evaluation",
+      "event_at": "2026-09-08T14:19:57+08:00",
+      "feedback_id": "feedback-20260908-formal-b02-v2-rejected-impact",
+      "batch_id": "batch-20260907-authorized-rewrite",
+      "candidate_id": "batch-20260906-story-01-c2",
+      "revision_id": "r2",
+      "format": "story",
+      "evaluation": "rejected",
+      "reason_codes": [
+        "HOOK_WEAK",
+        "EVENT_THIN",
+        "FAGE_GENERIC"
+      ],
+      "preserve": [],
+      "avoid": [
+        "不要把冲突写得克制平淡",
+        "不要缺少夸张看点和爆款吸引力"
+      ]
+    },
+    {
+      "event_type": "candidate_evaluation",
+      "event_at": "2026-09-08T14:19:57+08:00",
+      "feedback_id": "feedback-20260908-formal-b03-v2-rejected-women-empathy",
+      "batch_id": "batch-20260907-authorized-rewrite",
+      "candidate_id": "batch-20260906-direct-05-c3",
+      "revision_id": "r2",
+      "format": "story",
+      "evaluation": "rejected",
+      "reason_codes": [
+        "HOOK_WEAK",
+        "EVENT_THIN",
+        "FAGE_GENERIC"
+      ],
+      "preserve": [],
+      "avoid": [
+        "不要弱化男人否定家庭主妇价值的错误",
+        "不要把男人写得过于讲理而失去可骂性",
+        "不要让发哥只温和分析而不主持公道",
+        "不要缺少女性家庭奉献和价值感的强共鸣"
+      ]
+    },
+    {
+      "event_type": "candidate_evaluation",
+      "event_at": "2026-09-08T14:19:57+08:00",
+      "feedback_id": "feedback-20260908-formal-b04-v2-rejected-impact",
+      "batch_id": "batch-20260907-authorized-rewrite",
+      "candidate_id": "batch-20260906-direct-05-c1",
+      "revision_id": "r2",
+      "format": "story",
+      "evaluation": "rejected",
+      "reason_codes": [
+        "HOOK_WEAK",
+        "EVENT_THIN",
+        "FAGE_GENERIC"
+      ],
+      "preserve": [],
+      "avoid": [
+        "不要把冲突写得克制平淡",
+        "不要缺少夸张看点和爆款吸引力"
+      ]
+    },
+    {
+      "event_type": "candidate_evaluation",
+      "event_at": "2026-09-08T14:19:58+08:00",
+      "feedback_id": "feedback-20260908-formal-b05-v2-rejected-impact",
+      "batch_id": "batch-20260907-authorized-rewrite",
+      "candidate_id": "batch-20260906-direct-04-c1",
+      "revision_id": "r2",
+      "format": "story",
+      "evaluation": "rejected",
+      "reason_codes": [
+        "HOOK_WEAK",
+        "EVENT_THIN",
+        "FAGE_GENERIC"
+      ],
+      "preserve": [],
+      "avoid": [
+        "不要把冲突写得克制平淡",
+        "不要缺少夸张看点和爆款吸引力"
+      ]
+    },
+    {
+      "event_type": "candidate_evaluation",
+      "event_at": "2026-09-08T14:19:58+08:00",
+      "feedback_id": "feedback-20260908-formal-b06-v2-rejected-impact",
+      "batch_id": "batch-20260907-authorized-rewrite",
+      "candidate_id": "batch-20260906-direct-05-c2",
+      "revision_id": "r2",
+      "format": "story",
+      "evaluation": "rejected",
+      "reason_codes": [
+        "HOOK_WEAK",
+        "EVENT_THIN",
+        "FAGE_GENERIC"
+      ],
+      "preserve": [],
+      "avoid": [
+        "不要把冲突写得克制平淡",
+        "不要缺少夸张看点和爆款吸引力"
+      ]
+    },
+    {
+      "event_type": "candidate_evaluation",
+      "event_at": "2026-09-08T14:19:58+08:00",
+      "feedback_id": "feedback-20260908-formal-b07-v2-rejected-impact",
+      "batch_id": "batch-20260907-authorized-rewrite",
+      "candidate_id": "batch-20260906-story-01-c1",
+      "revision_id": "r2",
+      "format": "story",
+      "evaluation": "rejected",
+      "reason_codes": [
+        "HOOK_WEAK",
+        "EVENT_THIN",
+        "FAGE_GENERIC"
+      ],
+      "preserve": [],
+      "avoid": [
+        "不要把冲突写得克制平淡",
+        "不要缺少夸张看点和爆款吸引力"
+      ]
+    },
+    {
+      "event_type": "candidate_evaluation",
+      "event_at": "2026-09-08T14:19:58+08:00",
+      "feedback_id": "feedback-20260908-formal-a01-rejected-direction",
+      "batch_id": "batch-20260908-monologue-01",
+      "candidate_id": "batch-20260908-monologue-01-c1",
+      "revision_id": "r1",
+      "format": "monologue",
+      "evaluation": "rejected",
+      "reason_codes": [
+        "HOOK_WEAK",
+        "EVENT_THIN",
+        "FAGE_GENERIC",
+        "OTHER"
+      ],
+      "preserve": [],
+      "avoid": [
+        "不要用随礼借钱这类小事件充当口播主题",
+        "不要回避人生哲理和大格局表达",
+        "不要缺少热点、悬念、真诚和走心感"
+      ]
+    },
+    {
+      "event_type": "candidate_evaluation",
+      "event_at": "2026-09-08T14:19:58+08:00",
+      "feedback_id": "feedback-20260908-formal-a02-rejected-direction",
+      "batch_id": "batch-20260908-monologue-01",
+      "candidate_id": "batch-20260908-monologue-01-c2",
+      "revision_id": "r1",
+      "format": "monologue",
+      "evaluation": "rejected",
+      "reason_codes": [
+        "HOOK_WEAK",
+        "EVENT_THIN",
+        "FAGE_GENERIC",
+        "OTHER"
+      ],
+      "preserve": [],
+      "avoid": [
+        "不要用老人带娃休息这类小事件充当口播主题",
+        "不要回避人生哲理和大格局表达",
+        "不要缺少热点、悬念、真诚和走心感"
+      ]
+    },
+    {
+      "event_type": "candidate_evaluation",
+      "event_at": "2026-09-08T14:19:59+08:00",
+      "feedback_id": "feedback-20260908-formal-a03-rejected-direction",
+      "batch_id": "batch-20260908-monologue-01",
+      "candidate_id": "batch-20260908-monologue-01-c3",
+      "revision_id": "r1",
+      "format": "monologue",
+      "evaluation": "rejected",
+      "reason_codes": [
+        "HOOK_WEAK",
+        "EVENT_THIN",
+        "FAGE_GENERIC",
+        "OTHER"
+      ],
+      "preserve": [],
+      "avoid": [
+        "不要用日常小事件充当口播的最高主题",
+        "不要回避人生哲理和大格局表达",
+        "不要缺少热点、悬念、真诚和走心感"
+      ]
+    },
+    {
+      "event_type": "candidate_evaluation",
+      "event_at": "2026-09-09T08:10:20+08:00",
+      "feedback_id": "feedback-20260909-story-02-c1-batch-similarity",
+      "batch_id": "batch-20260908-story-02",
+      "candidate_id": "batch-20260908-story-02-c1",
+      "revision_id": "r1",
+      "format": "story",
+      "evaluation": "minor_revision",
+      "reason_codes": [
+        "TOO_SIMILAR"
+      ],
+      "preserve": [
+        "保留家庭主妇价值冲突，作为新批次唯一的婚姻家庭题材"
+      ],
+      "avoid": [
+        "不要让同批其他剧情继续复用女性付出被男性亲属否定的骨架"
+      ]
+    },
+    {
+      "event_type": "candidate_evaluation",
+      "event_at": "2026-09-09T08:10:20+08:00",
+      "feedback_id": "feedback-20260909-story-02-c2-batch-similarity",
+      "batch_id": "batch-20260908-story-02",
+      "candidate_id": "batch-20260908-story-02-c2",
+      "revision_id": "r1",
+      "format": "story",
+      "evaluation": "major_revision",
+      "reason_codes": [
+        "TOO_SIMILAR"
+      ],
+      "preserve": [],
+      "avoid": [
+        "不要继续使用女性长期付出被男性亲属否定、发哥主持公道的同类骨架"
+      ]
+    },
+    {
+      "event_type": "candidate_evaluation",
+      "event_at": "2026-09-09T08:10:21+08:00",
+      "feedback_id": "feedback-20260909-story-02-c3-batch-similarity",
+      "batch_id": "batch-20260908-story-02",
+      "candidate_id": "batch-20260908-story-02-c3",
+      "revision_id": "r1",
+      "format": "story",
+      "evaluation": "major_revision",
+      "reason_codes": [
+        "TOO_SIMILAR"
+      ],
+      "preserve": [],
+      "avoid": [
+        "不要继续使用女性长期付出被男性亲属否定、发哥主持公道的同类骨架"
+      ]
+    }
+  ],
+  "summary": {
+    "latest_feedback_ids": [
+      "feedback-20260908-formal-b02-v2-rejected-impact",
+      "feedback-20260908-formal-b03-v2-rejected-women-empathy",
+      "feedback-20260908-formal-b04-v2-rejected-impact",
+      "feedback-20260908-formal-b05-v2-rejected-impact",
+      "feedback-20260908-formal-b06-v2-rejected-impact",
+      "feedback-20260908-formal-b07-v2-rejected-impact",
+      "feedback-20260908-formal-a01-rejected-direction",
+      "feedback-20260908-formal-a02-rejected-direction",
+      "feedback-20260908-formal-a03-rejected-direction",
+      "feedback-20260909-story-02-c1-batch-similarity",
+      "feedback-20260909-story-02-c2-batch-similarity",
+      "feedback-20260909-story-02-c3-batch-similarity"
+    ],
+    "keep": [
+      "保留家庭主妇价值冲突，作为新批次唯一的婚姻家庭题材"
+    ],
+    "avoid": [
+      "不要把冲突写得克制平淡",
+      "不要缺少夸张看点和爆款吸引力",
+      "不要弱化男人否定家庭主妇价值的错误",
+      "不要把男人写得过于讲理而失去可骂性",
+      "不要让发哥只温和分析而不主持公道",
+      "不要缺少女性家庭奉献和价值感的强共鸣",
+      "不要用随礼借钱这类小事件充当口播主题",
+      "不要回避人生哲理和大格局表达",
+      "不要缺少热点、悬念、真诚和走心感",
+      "不要用老人带娃休息这类小事件充当口播主题",
+      "不要用日常小事件充当口播的最高主题",
+      "不要让同批其他剧情继续复用女性付出被男性亲属否定的骨架",
+      "不要继续使用女性长期付出被男性亲属否定、发哥主持公道的同类骨架"
+    ],
+    "length_feedback": [],
+    "publication_data": "无用户提供的发布数据"
+  }
 }

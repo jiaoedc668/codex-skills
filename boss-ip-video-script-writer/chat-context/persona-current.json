@@ -1,9 +1,140 @@
 {
   "schema_version": 1,
-  "snapshot_status": "not_synced",
-  "updated_at": null,
+  "snapshot_status": "current",
+  "updated_at": "2026-09-10T10:45:58+08:00",
   "source_of_truth": "local business project",
-  "fallback": "../references/persona-template.json",
   "public_safe_only": true,
-  "persona": null
+  "persona": {
+    "schema_version": 3,
+    "identity": {
+      "display_name": "发哥",
+      "age_band": "40+",
+      "role": "东来乐集团合伙人",
+      "public_role_usage": "只作创作坐标，前期脚本弱化公司和商业信息",
+      "audience": "40+泛人群",
+      "fiction_status": "授权虚构人设"
+    },
+    "production_frame": {
+      "platform": "抖音自然流量",
+      "locations": [
+        "公司",
+        "办公室",
+        "展厅",
+        "家中公共空间",
+        "朋友聚会场景",
+        "日常公共空间"
+      ],
+      "default_format": "默认story，发哥与员工、朋友或亲戚谈其难题；monologue仅发哥口播",
+      "scene_selection": "先选最能承载公共冲突的低成本场景，不为维持老板身份强塞办公室",
+      "relationship_boundary": "朋友或亲戚可作为单条授权虚构关系，不自动成为发哥真实履历或后续连续事实",
+      "duration": "story约60秒、尽量90秒内；monologue约30秒、尽量45秒内；长短以用户反馈为准",
+      "brand_exposure": "前期弱化",
+      "commerce_stage": "暂不写商品、直播或千川转化",
+      "duration_reference": {
+        "story": {
+          "target_seconds": 60,
+          "preferred_max_seconds": 90
+        },
+        "monologue": {
+          "target_seconds": 30,
+          "preferred_max_seconds": 45
+        }
+      }
+    },
+    "authorized_fictional_behaviors": [
+      {
+        "id": "B02",
+        "behavior": "承认自己的说法不完整或判断需要调整",
+        "visible_proof": "听到新信息后改口、补充理由或建议",
+        "limit": "不靠承诺出钱、安排或代办收场"
+      },
+      {
+        "id": "B03",
+        "behavior": "指出对方说法中的矛盾，同时给对方保留尊严",
+        "visible_proof": "针对具体做法追问或反驳，对方仍可提出真实顾虑",
+        "limit": "不羞辱、不处罚、不代替当事人决定"
+      },
+      {
+        "id": "B04",
+        "behavior": "面对家庭或中年困境只评价做法并给出下一步建议",
+        "visible_proof": "指出由当事人选择和执行的一步，不宣称自己亲历",
+        "limit": "不把画外音困境改写为发哥本人家庭事实"
+      },
+      {
+        "id": "B06",
+        "behavior": "分析现实代价及被忽略的处境",
+        "visible_proof": "用眼前信息说明判断依据，允许对方保留不同意见",
+        "limit": "发哥只追问、分析、批评或建议，不能参与、介绍、安排或代办"
+      }
+    ],
+    "stable_expression": [
+      {
+        "id": "E01",
+        "pattern": "先接住对方的具体问题，再用短反问或动作回应",
+        "avoid": "先说结论、底层逻辑、真正重要的是"
+      },
+      {
+        "id": "E02",
+        "pattern": "剧情少做宏大总结，用冲突和行动表达；口播允许讲人生大道理，但必须用具体理由、对照或现实例子托住",
+        "avoid": "剧情突然拔高；口播只喊人生、人品、格局等空泛口号"
+      },
+      {
+        "id": "E03",
+        "pattern": "允许停顿、嘴硬或被员工噎一下，再给决定",
+        "avoid": "从头到尾像老师完整授课"
+      }
+    ],
+    "viewpoint_principles": [
+      {
+        "id": "P01",
+        "active_version": 2,
+        "tension": "制度与人情",
+        "default_choice": "先看清双方责任，再建议当事人选择可承受的调整",
+        "rejected_choice": "用规则抹去人的困难，或由老板替人兜底",
+        "exceptions": [
+          "信息不全时先追问，不替当事人作最终决定"
+        ],
+        "cost": "当事人承担所选方案的现实代价；发哥接受建议被质疑"
+      },
+      {
+        "id": "P02",
+        "active_version": 2,
+        "tension": "效率与责任",
+        "default_choice": "允许工具省力，但责任仍由使用结果和作决定的人承担",
+        "rejected_choice": "把工具输出当成无需核实的最终判断",
+        "exceptions": [
+          "责任边界不清时建议先核实再行动"
+        ],
+        "cost": "当事人承担核实与选择成本；发哥不替人批准或落实安排"
+      },
+      {
+        "id": "P03",
+        "active_version": 2,
+        "tension": "面子与认错",
+        "default_choice": "证据改变时承认原判断不足，并说明修正理由",
+        "rejected_choice": "为了面子否认证据或用身份压过不同意见",
+        "exceptions": [
+          "证据尚未核实时先问清事实，不抢认不存在的责任"
+        ],
+        "cost": "发哥承受短暂吃瘪或改口，不承担他人的生活和安排责任"
+      }
+    ],
+    "visible_weaknesses": [
+      {
+        "id": "W01",
+        "weakness": "嘴上先硬一下，容易被员工用原话架住",
+        "safe_payoff": "停顿后承认判断不足，不靠身份压人或代办收场"
+      },
+      {
+        "id": "W02",
+        "weakness": "有时低估了对方现实中的阻力",
+        "safe_payoff": "听到反驳后补问处境，调整自己的建议"
+      },
+      {
+        "id": "W03",
+        "weakness": "对新工具好奇但不装专家",
+        "safe_payoff": "当场试、承认不会，再判断该由谁负责"
+      }
+    ]
+  }
 }

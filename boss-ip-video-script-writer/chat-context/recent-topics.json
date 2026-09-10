@@ -1,9 +1,94 @@
 {
   "schema_version": 1,
-  "snapshot_status": "not_synced",
-  "updated_at": null,
+  "snapshot_status": "current",
+  "updated_at": "2026-09-10T10:45:58+08:00",
   "source_of_truth": "local topic ledger",
   "public_safe_only": true,
   "max_items": 24,
-  "items": []
+  "items": [
+    {
+      "topic_id": "topic-20260828-001",
+      "title": "请假回家收拾孩子",
+      "category": "子女教育",
+      "status": "rejected",
+      "event_at": "2026-08-28T17:13:46+08:00"
+    },
+    {
+      "topic_id": "topic-20260828-002",
+      "title": "工资交了，家务就能下班吗",
+      "category": "夫妻相处",
+      "status": "proposed",
+      "event_at": "2026-08-28T16:20:15+08:00"
+    },
+    {
+      "topic_id": "topic-20260828-003",
+      "title": "四十多岁学热梗，先别急着装年轻",
+      "category": "励志成长",
+      "status": "proposed",
+      "event_at": "2026-08-28T16:20:15+08:00"
+    },
+    {
+      "topic_id": "topic-20260828-004",
+      "title": "老板回来，工位被员工占了",
+      "category": "职场关系",
+      "status": "selected",
+      "event_at": "2026-08-28T17:32:04+08:00"
+    },
+    {
+      "topic_id": "topic-20260828-005",
+      "title": "员工抱着被子来公司创业",
+      "category": "创业认知",
+      "status": "selected",
+      "event_at": "2026-08-28T17:32:05+08:00"
+    },
+    {
+      "topic_id": "topic-20260828-006",
+      "title": "员工主动求老板罚他加班",
+      "category": "夫妻相处",
+      "status": "selected",
+      "event_at": "2026-08-28T17:32:05+08:00"
+    },
+    {
+      "topic_id": "topic-20260831-007",
+      "title": "抽三次，怎么都是老板",
+      "category": "职场关系",
+      "status": "selected",
+      "event_at": "2026-08-31T09:49:01+08:00"
+    },
+    {
+      "topic_id": "topic-20260831-008",
+      "title": "爸又打来第八个视频",
+      "category": "父母养老",
+      "status": "proposed",
+      "event_at": "2026-08-31T09:46:24+08:00"
+    },
+    {
+      "topic_id": "topic-20260831-009",
+      "title": "两把家门钥匙，让老板抓阄",
+      "category": "婆媳与家庭边界",
+      "status": "proposed",
+      "event_at": "2026-08-31T09:46:24+08:00"
+    },
+    {
+      "topic_id": "topic-20260831-010",
+      "title": "AI省了两小时，能抵两小时班吗",
+      "category": "职场关系",
+      "status": "selected",
+      "event_at": "2026-08-31T16:36:44+08:00"
+    },
+    {
+      "topic_id": "topic-20260831-011",
+      "title": "AI十分钟写完，谁来签字",
+      "category": "职场关系",
+      "status": "proposed",
+      "event_at": "2026-08-31T16:34:33+08:00"
+    },
+    {
+      "topic_id": "topic-20260831-012",
+      "title": "都得上班，四十多岁还学AI吗",
+      "category": "励志成长",
+      "status": "proposed",
+      "event_at": "2026-08-31T16:34:33+08:00"
+    }
+  ]
 }
