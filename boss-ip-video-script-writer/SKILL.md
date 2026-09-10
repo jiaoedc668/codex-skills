@@ -2,7 +2,7 @@
 name: boss-ip-video-script-writer
 description: Use when 为发哥老板IP创作或优化抖音、视频号自然流量剧情、口播、标题、发布介绍，参考续写或制作确认后的Word；不用于商品口播、千川广告或直播带货。
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Boss IP Video Script Writer

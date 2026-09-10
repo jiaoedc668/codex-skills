@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "snapshot_status": "not_synced",
+  "updated_at": null,
+  "source_of_truth": "local business project",
+  "fallback": "../references/persona-template.json",
+  "public_safe_only": true,
+  "persona": null
+}

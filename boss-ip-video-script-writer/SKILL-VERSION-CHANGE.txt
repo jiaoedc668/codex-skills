@@ -1,0 +1,6 @@
+将 boss-ip-video-script-writer/SKILL.md 中：
+  version: "1.0.0"
+修改为：
+  version: "1.1.0"
+
+不要改动其他 SKILL.md 内容。

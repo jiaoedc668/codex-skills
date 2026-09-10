@@ -2,6 +2,24 @@
 
 版本唯一值为SKILL.md的metadata.version；已发布标签不移动。发布流程见references/release-management.md。
 
+## 1.1.0 — 2026-09-10
+
+兼容新增普通 ChatGPT Chat 读取方式，不改变 schema v6、人物 schema 3、本地反馈状态机、Word 授权门或 Codex 本地执行流程。
+
+### 本次优化
+
+- 新增 `CHATGPT.md`，只处理普通 ChatGPT Chat 的环境差异；本地 Codex 默认忽略，不复制第二套创作规则。
+- 新增 `chat-context/` 公开安全快照骨架，分别承载人物、近期反馈、近期选题和共享抽象偏好的脱敏投影。
+- 快照默认 `not_synced`，未同步时网页 Chat 回退到 `persona-template.json` 和当前会话，不伪造本地台账、脚本执行、哈希或验收结果。
+- `web-access` 在普通 Chat 环境下允许由 ChatGPT 原生 Web Search 替代，但 10 万赞原作、内容可读性和其他研究硬门不降低。
+- README、AGENTS 与版本维护规则增加公开快照边界：原始业务内容、完整台账、正式交付和运行产物仍不进入 Public 仓库。
+
+### 验证
+
+本次未修改 Python、schema 或生成器逻辑。公开快照 JSON 骨架已做语法检查；ChatGPT 适配文档按新写、标题、局部修改、联网研究、本地脚本不可执行和正式 Word 六类路径进行静态审读。
+
+当前 ChatGPT GitHub 集成只有读取权限，无法直接在远端提交；因此本条仅作为待本地 Codex 应用后的 1.1.0 发布记录。正式发布前仍需本地运行仓库既定 unittest、compileall、git diff --check，并由本地 Git 创建/推送 `boss-ip-v1.1.0` 标签。
+
 ## 1.0.0 — 2026-09-09
 
 首次独立语义版本基线。候选schema v6、人物schema 3继续保留，历史v5/v4兼容读取；人物profile_revision更新为2，旧候选须使用迁移前人物快照复验。
