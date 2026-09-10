@@ -1,6 +1,4 @@
-将 boss-ip-video-script-writer/SKILL.md 中：
-  version: "1.0.0"
-修改为：
-  version: "1.1.0"
-
-不要改动其他 SKILL.md 内容。
+发布说明：boss-ip-video-script-writer 1.3.0 → 1.4.0。
+本文件保留为兼容说明入口，不再是旧版逐行修改指令。
+唯一版本来源为 SKILL.md metadata.version；变更见 CHANGELOG.md，流程见 references/release-management.md。
+本次为兼容创作能力增强，schema v6、Python 合同与反馈状态机不变。
