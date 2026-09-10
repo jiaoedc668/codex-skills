@@ -1,0 +1,4 @@
+interface:
+  display_name: "产品视频脚本"
+  short_description: "抖音自然流量产品口播和剧情候选及确认后拍摄 Word"
+  default_prompt: "Use $product-video-script-writer to create product-video candidates from my supplied facts and stop for selection."
