@@ -1,5 +1,7 @@
 # Boss IP Public Context Sync Implementation Plan
 
+> 历史计划，已随 `boss-ip-v1.2.0` 实现并发布。下列步骤和未勾选框保留原始计划，不是当前待办或重新执行指令。现役入口为 [SKILL.md](../../../boss-ip-video-script-writer/SKILL.md)，实际实现为 [sync_public_context.py](../../../boss-ip-video-script-writer/scripts/sync_public_context.py)。2026-09-10 收尾核对：原计划中的整批原子性并未实现，当前逐文件替换，无跨文件回滚；输入与安全校验失败仍发生在替换之前。
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Build a read-only, whitelist-based synchronizer that publishes safe local Boss IP state into the four `chat-context/` snapshots.

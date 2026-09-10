@@ -25,7 +25,7 @@
 python <skill-dir>/scripts/sync_public_context.py --persona <business-root>/人物设定.json --feedback-ledger <business-root>/反馈台账.jsonl --topic-ledger <business-root>/选题台账.jsonl --shared-ledger <shared-root>/shared-creative-preferences.jsonl --output-dir <skill-dir>/chat-context
 ```
 
-同步器只写固定白名单投影，业务状态仍以本地文件为准；失败时不会覆盖已有快照。
+同步器只写固定白名单投影，业务状态仍以本地文件为准。输入读取或安全校验失败时不覆盖已有快照；写入阶段逐文件替换，不提供四文件事务回滚，中途 I/O 失败可能留下部分更新。
 
 ## 迭代流程
 
